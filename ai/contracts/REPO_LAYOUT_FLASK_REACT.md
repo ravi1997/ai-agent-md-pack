@@ -1,16 +1,11 @@
-# Repo Layout Contract: Flask API + React (Vite)
+# Contract: Repo Layout (Flask API + React)
 
-## Required directories
-- `backend/` Flask API
-- `frontend/` React Vite
-- `nginx/` (optional, recommended for prod)
-- `scripts/`
+Recommended:
+- `backend/` (Flask API)
+- `frontend/` (Vite React)
+- `nginx/` reverse proxy
+- `docker-compose.yml` at root
 
-## Build contract
-- Frontend builds to a deterministic path (`dist/`)
-- Backend serves API under `/api/*`
-- CORS and auth handled explicitly
-
-## Required endpoints
-- Backend `/healthz`, `/readyz`
-- Frontend `/` and `/ai` console route (if enabled)
+Agent assumptions:
+- backend runs on :8000 internally
+- frontend built and served via nginx or separate dev server in dev

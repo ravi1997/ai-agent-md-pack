@@ -1,18 +1,17 @@
-# Quality Gates (Must Pass Before Commit/PR)
+# Quality Gates (must pass before “done”)
 
-## Before committing
-- `ruff check .`
-- `ruff format .`
-- `pytest -q` (or targeted subset)
-- No secrets in diff (scan env, tokens, credentials)
+## For fixes (dev/staging)
+- [ ] Evidence collected (correct checklist)
+- [ ] Root cause stated (not just symptoms)
+- [ ] Regression test added when feasible
+- [ ] `pytest` passes
+- [ ] lint/format passes (ruff/black/prettier as applicable)
+- [ ] no secrets/PHI logged
+- [ ] rollback steps documented if risky
+- [ ] PR summary artifact produced
 
-## Before opening PR
-- Updated docs/runbook if operational change
-- Added/updated tests
-- Clear reproduction + verification steps
-
-## Before closing incident
-- Incident summary (what happened)
-- Root cause
-- Fix + tests
-- Prevent recurrence (monitoring / alerts / guardrails)
+## For production guidance
+- [ ] No write actions executed
+- [ ] Commands provided are safe and reversible
+- [ ] Monitoring points included
+- [ ] Incident report artifact produced

@@ -1,35 +1,82 @@
-# Project Context (Fill Once Per Repo)
+# Project Context (fill once)
 
-Fill the placeholders (keep it short). The agent should work even if you leave some blank.
+## AUTO_CONTEXT (fill once — agents will infer missing values)
+Copy/paste and edit. Leave unknowns blank.
 
-## App
-- App name: <APP_NAME>
-- Type: <flask-jinja-tailwind | flask-api-react>
-- Python package/module: <e.g., yourapp>
-- Entry point: <e.g., wsgi:app or app:create_app()>
-- Primary DB: <postgres|sqlite|mongo>
-- Auth: <none|session|jwt|oauth>
-- Domain(s): <example.com, api.example.com>
-- Environments: <dev|staging|production>
+```yaml
+app_name: ""
+env: "staging"           # dev|staging|production
+domain: ""
+repo_root: "."
+backend_dir: ""          # backend|app|server|.
+frontend_dir: ""         # frontend|client|ui|none
+python_package: ""
+entrypoint: ""           # wsgi:app | app:app | yourapp.wsgi:app
+listen_host: "0.0.0.0"
+app_port: 8000
+nginx_port: 80
+health_path: "/healthz"
 
-## Runtime
-- Web server: <gunicorn|uvicorn|waitress>
-- Reverse proxy: <nginx|caddy|none>
-- Process manager: <docker|systemd|both>
-- Logs location: <journalctl|/var/log/...|docker logs>
+compose_file: "docker-compose.yml"
+compose_project: ""
+compose_backend_service: ""
+compose_frontend_service: ""
+compose_nginx_service: ""
 
-## CI/CD
-- CI: <github actions|gitlab ci|none>
-- Deploy: <manual|ansible|compose|k8s>
-- Branching: <main/master + feature branches>
-- Issue tracker: <github|gitlab|jira>
+systemd_unit: ""
+systemd_user: ""
+systemd_workdir: ""
 
-## Safety constraints
-- Production write actions: BLOCKED (yes)
-- PHI-safe logging: ENABLED (yes)
+nginx_access_log: ""
+nginx_error_log: ""
+app_log: ""              # file path or "journald"
 
-## Shortcuts
-- Dev compose file: <docker-compose.yml>
-- Prod compose file: <docker-compose.prod.yml>
-- Nginx conf: <nginx/nginx.conf>
-- systemd unit(s): <service name(s) if any>
+db_kind: ""              # sqlite|postgres|mysql|mongo
+db_url_env: "DATABASE_URL"
+migration_tool: ""       # alembic|flask-migrate|none
+
+test_cmd: "pytest -q"
+lint_cmd: "ruff check . && ruff format ."
+```
+
+### Autofill behavior
+- If a value is blank, agents MUST infer it using `autofill/PATH_AND_SERVICE_INFERENCE.md`.
+- If env is unclear, treat as `production` (read-only safety).
+
+> Keep this short. The goal is to prevent the agent from asking deep questions.
+
+## Identity
+- Project name:
+- Repo URL (GitHub/GitLab):
+- Primary language/runtime: (Python/Node/etc.)
+- Framework: (Flask / FastAPI / React / Vite / Tailwind / etc.)
+
+## Environments
+- Dev URL:
+- Staging URL:
+- Production URL:
+
+## Run & deploy
+- Local run command:
+- Docker compose files:
+- systemd services (if any):
+- Reverse proxy: (nginx/apache) + config path:
+- WSGI server: (gunicorn/uwsgi) + config:
+
+## Data
+- DB type(s): (Postgres/MySQL/SQLite/Mongo/etc.)
+- Migration tool: (Alembic/Flask-Migrate/etc.)
+- Redis/Queue: (Celery/RQ/etc.)
+
+## Tests & quality
+- Test runner: (pytest)
+- Lint/format: (ruff/black/prettier/eslint)
+- CI: (GitHub Actions/GitLab CI)
+
+## Sensitive/PHI notes
+- PHI present? (yes/no) — default yes
+- Any endpoints needing extra masking:
+
+## Agent permissions
+- Dev/staging can auto-fix and commit? (yes)
+- Production write actions blocked? (yes)

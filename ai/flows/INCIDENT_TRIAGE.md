@@ -1,38 +1,41 @@
-# Incident Triage Flow (Min-input, Max-action)
+# FLOW: Incident Triage
 
-## Goal
-Turn a vague symptom into a verified fix with tests and an artifact trail.
+## Inputs (minimal)
+Fill: `forms/INCIDENT_MIN.md`
 
-## Step 1 — Minimal intake
-If key info is missing, use **forms/INCIDENT_MIN.md** but ask at most **one** question.
+## Step 1 — Classify incident
+Choose one primary category:
+- NGINX / 502 / 504 / upstream
+- App crash / exception
+- Docker build/run failure
+- systemd service failure
+- DB/migration failure
+- Performance regression
+- Security event
 
-## Step 2 — Stabilize and classify
-Classify into one bucket:
-- Gateway: nginx 502/504
-- App crash/exception
-- DB/migrations
-- Infra: systemd/docker
-- Performance
-- Security
+## Step 2 — Collect evidence (mandatory)
+Use the relevant checklist:
+- `checklists/NGINX_502_EVIDENCE.md`
+- `checklists/DOCKER_BUILD_FAIL_EVIDENCE.md`
+- `checklists/SYSTEMD_FAIL_EVIDENCE.md`
+- `checklists/MIGRATION_FAIL_EVIDENCE.md`
+- `checklists/PERF_REGRESSION_EVIDENCE.md`
 
-## Step 3 — Collect evidence (fast)
-- Get logs (sanitized)
-- Identify last known good
-- Check health endpoints
-- Confirm environment (prod/staging/dev)
+## Step 3 — Hypotheses (ranked)
+Create 3–5 hypotheses with:
+- supporting evidence
+- disconfirming evidence
+- next verification command
 
-## Step 4 — Hypothesis shortlist (ranked)
-Produce 3 hypotheses max. Each must have:
-- Supporting evidence
-- A quick test to confirm/deny
+## Step 4 — Containment / rollback
+If user impact:
+- recommend safe containment (rate-limit, maintenance mode)
+- recommend rollback strategy (`workflows/rollback_recovery.md`)
 
 ## Step 5 — Fix loop
-1. Reproduce in staging/dev
-2. Write failing test (preferred)
-3. Implement smallest fix
-4. Run quality gates (**gates/QUALITY_GATES.md**)
-5. Produce PR summary (**artifacts/pr_summary.md**)
+Follow: `flows/AUTOFIX_LOOP.md`
 
-## Step 6 — Closeout
-- Create/Update runbook
-- Postmortem if severity high (**artifacts/postmortem.md**)
+## Outputs
+- `artifacts/INCIDENT_REPORT.md`
+- (If major) `artifacts/POSTMORTEM.md`
+- `artifacts/DECISION_RECORD.md` for notable decisions

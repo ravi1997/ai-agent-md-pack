@@ -1,54 +1,49 @@
-# Reference Map (Tags → Files)
+# Reference Map (Tags → File)
 
-- `00_INDEX` → `00_INDEX.md`
-- `00_SYSTEM` → `00_SYSTEM.md`
-- `01_PROJECT_CONTEXT` → `01_PROJECT_CONTEXT.md`
-- `02_CONVENTIONS` → `02_CONVENTIONS.md`
-- `03_DEFAULTS` → `03_DEFAULTS.md`
-- `10_COMMANDS` → `10_COMMANDS.md`
-- `ARTIFACTS/INCIDENT_REPORT` → `artifacts/incident_report.md`
-- `ARTIFACTS/MAINTENANCE_MODE` → `artifacts/maintenance_mode.md`
-- `ARTIFACTS/POSTMORTEM` → `artifacts/postmortem.md`
-- `ARTIFACTS/PR_SUMMARY` → `artifacts/pr_summary.md`
-- `ARTIFACTS/RELEASE_NOTES` → `artifacts/release_notes.md`
-- `ARTIFACTS/RUNBOOK_TEMPLATE` → `artifacts/runbook_template.md`
-- `ARTIFACTS/SECURITY_CHECKLIST` → `artifacts/security_checklist.md`
-- `CHECKLISTS/NGINX_502_EVIDENCE` → `checklists/NGINX_502_EVIDENCE.md`
-- `CONTRACTS/REPO_LAYOUT_FLASK` → `contracts/REPO_LAYOUT_FLASK.md`
-- `CONTRACTS/REPO_LAYOUT_FLASK_REACT` → `contracts/REPO_LAYOUT_FLASK_REACT.md`
-- `CONTRACTS/STYLE_AND_NAMING` → `contracts/STYLE_AND_NAMING.md`
-- `FLOWS/AUTOFIX_LOOP` → `flows/autofix_loop.md`
-- `FLOWS/PRODUCTION_INCIDENT` → `flows/production_incident.md`
-- `FLOWS/TRIAGE_TREE` → `flows/triage_tree.md`
-- `FORMS/DEPLOY_MIN` → `forms/DEPLOY_MIN.md`
-- `FORMS/FEATURE_MIN` → `forms/FEATURE_MIN.md`
-- `FORMS/INCIDENT_MIN` → `forms/INCIDENT_MIN.md`
-- `GATES/QUALITY_GATES` → `gates/QUALITY_GATES.md`
-- `POLICY/COMMAND_SAFETY` → `policy/COMMAND_SAFETY.md`
-- `POLICY/PRODUCTION_POLICY` → `policy/PRODUCTION_POLICY.md`
-- `PROFILES/AGGRESSIVE_AUTOFIX` → `profiles/aggressive_autofix.md`
-- `PROFILES/DEFAULT` → `profiles/default.md`
-- `PROFILES/PRODUCTION_SAFE` → `profiles/production_safe.md`
-- `SKILLS/README` → `skills/README.md`
-- `SKILLS/DB_POSTGRES` → `skills/db_postgres.md`
-- `SKILLS/DOCKER_COMPOSE` → `skills/docker_compose.md`
-- `SKILLS/FLASK_DEBUGGING` → `skills/flask_debugging.md`
-- `SKILLS/GIT_PRS` → `skills/git_prs.md`
-- `SKILLS/LINT_FORMAT` → `skills/lint_format.md`
-- `SKILLS/LOGGING_REDACTION` → `skills/logging_redaction.md`
-- `SKILLS/NGINX_GUNICORN` → `skills/nginx_gunicorn.md`
-- `SKILLS/REACT_VITE` → `skills/react_vite.md`
-- `SKILLS/SENTRY_OBS` → `skills/sentry_obs.md`
-- `SKILLS/SYSTEMD` → `skills/systemd.md`
-- `SKILLS/TAILWIND` → `skills/tailwind.md`
-- `SKILLS/TESTING_PYTEST` → `skills/testing_pytest.md`
-- `TESTING/TEST_STRATEGY` → `testing/TEST_STRATEGY.md`
-- `WORKFLOWS/README` → `workflows/README.md`
-- `WORKFLOWS/DB_MIGRATIONS` → `workflows/db_migrations.md`
-- `WORKFLOWS/DEBUG_BASIC` → `workflows/debug_basic.md`
-- `WORKFLOWS/DOCKER_DEV_LOOP` → `workflows/docker_dev_loop.md`
-- `WORKFLOWS/FEATURE_DELIVERY` → `workflows/feature_delivery.md`
-- `WORKFLOWS/NGINX_502_504` → `workflows/nginx_502_504.md`
-- `WORKFLOWS/PERFORMANCE` → `workflows/performance.md`
-- `WORKFLOWS/SECURITY_SQLI_PATH` → `workflows/security_sqli_path.md`
-- `WORKFLOWS/SYSTEMD_FAILURES` → `workflows/systemd_failures.md`
+## Entry
+- ENTRYPOINT: `00_INDEX.md`
+- QUICKSTART: `QUICKSTART.md`
+- CONTEXT: `01_PROJECT_CONTEXT.md`
+
+## Flows
+- FLOW:INCIDENT_TRIAGE → `flows/INCIDENT_TRIAGE.md`
+- FLOW:AUTOFIX_LOOP → `flows/AUTOFIX_LOOP.md`
+
+## Workflows
+- WORKFLOW:NGINX_502_504 → `workflows/nginx_502_504.md`
+- WORKFLOW:MAINTENANCE_MODE → `workflows/maintenance_mode.md`
+- WORKFLOW:ROLLBACK_RECOVERY → `workflows/rollback_recovery.md`
+- WORKFLOW:DEPLOY_MIGRATE → `workflows/deploy_and_migrate.md`
+- WORKFLOW:FEATURE_DELIVERY → `workflows/feature_delivery.md`
+- WORKFLOW:SECURITY_INCIDENT → `workflows/security_incident.md`
+- WORKFLOW:PERF_PROFILING → `workflows/performance_profiling.md`
+
+## Checklists
+- CHECK:NGINX_502_EVIDENCE → `checklists/NGINX_502_EVIDENCE.md`
+- CHECK:DOCKER_BUILD_FAIL_EVIDENCE → `checklists/DOCKER_BUILD_FAIL_EVIDENCE.md`
+- CHECK:SYSTEMD_FAIL_EVIDENCE → `checklists/SYSTEMD_FAIL_EVIDENCE.md`
+- CHECK:MIGRATION_FAIL_EVIDENCE → `checklists/MIGRATION_FAIL_EVIDENCE.md`
+- CHECK:PERF_REGRESSION_EVIDENCE → `checklists/PERF_REGRESSION_EVIDENCE.md`
+
+## Policies
+- POLICY:PRODUCTION → `policy/PRODUCTION_POLICY.md`
+- POLICY:PHI_SAFE → `policy/PHI_SAFE_LOGGING.md`
+- POLICY:COMMAND_SAFETY → `policy/COMMAND_SAFETY.md`
+- POLICY:ENV_DETECTION → `policy/ENV_DETECTION.md`
+
+## Gates
+- GATE:QUALITY → `gates/QUALITY_GATES.md`
+- GATE:SELF_CHECK → `gates/AGENT_SELF_CHECK.md`
+
+## Artifacts
+- ARTIFACT:INCIDENT_REPORT → `artifacts/INCIDENT_REPORT.md`
+- ARTIFACT:POSTMORTEM → `artifacts/POSTMORTEM.md`
+- ARTIFACT:PR_SUMMARY → `artifacts/PR_SUMMARY.md`
+- ARTIFACT:DECISION_RECORD → `artifacts/DECISION_RECORD.md`
+- ARTIFACT:RUNBOOK → `artifacts/RUNBOOK.md`
+
+## Autofill
+- AUTOFILL:INFERENCE → `ai/autofill/PATH_AND_SERVICE_INFERENCE.md`
+- AUTOFILL:VARS → `ai/autofill/AUTOFILL_VARIABLES.md`
+- CONTRACT:CONTEXT_SCHEMA → `ai/contracts/CONTEXT_SCHEMA.md`
+- FORM:PROJECT_CONTEXT_MIN → `ai/forms/PROJECT_CONTEXT_MIN.md`

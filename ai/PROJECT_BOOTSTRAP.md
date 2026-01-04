@@ -1,22 +1,16 @@
-# Project Bootstrap Contract (Template Standardization)
+# Project Bootstrap (standard conventions)
 
-## Choose template type
-- Flask + Jinja + Tailwind → follow **contracts/REPO_LAYOUT_FLASK.md**
-- Flask API + React (Vite) → follow **contracts/REPO_LAYOUT_FLASK_REACT.md**
+## Flask-only
+- app factory `create_app()`
+- gunicorn service/compose uses that
+- enable PHI-safe logging rules
 
-## Must-have defaults
-- Health endpoints: `/healthz`, `/readyz`
-- PHI-safe request logging: see **skills/logging_redaction.md**
-- Lint/test: ruff + pytest
-- Nginx/Gunicorn recommended for prod: see **skills/nginx_gunicorn.md**
+## Flask + React
+- backend: `/api/*`
+- frontend: `/` routes
+- CORS configured in dev only
 
-## “No deep prompts” rule
-Any time requirements are unclear:
-- Use **forms/FEATURE_MIN.md** or **forms/INCIDENT_MIN.md**
-Ask at most **one** question, then proceed with assumptions.
-
-## Close the loop
-Every change must end with:
-- How to verify
-- What to monitor
-- Rollback steps (if operational)
+## Always
+- health endpoints: `/healthz` and `/readyz`
+- request-id propagation at proxy and app
+- tests + lint as standard gates

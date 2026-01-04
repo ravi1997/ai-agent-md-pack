@@ -1,17 +1,25 @@
 # Test Strategy Matrix
 
-## Decide level
-- Unit: pure functions, utilities, validators
-- Integration: Flask route tests using test client
-- System: docker-compose environment tests (staging/dev)
+## Choose test type by change
+### Pure logic change
+- Unit tests (fast)
+- Focus on edge cases
 
-## Typical choices
-- Bug in route logic → integration test (Flask client) + unit tests for helpers
-- DB query issue → integration test with temporary DB + migration check
-- Nginx/gateway → system test (compose) + smoke test endpoints
+### Flask route change
+- Flask test client request tests
+- Validate status, payload shape, redirects
+- Ensure PHI masking in logs if logging touched
 
-## Required for any bugfix
-1. Add failing test OR clear reproduction steps
-2. Make fix
-3. Ensure test passes
-4. Add regression coverage for edge case
+### DB model/migration
+- Integration tests with temporary DB
+- Check migrations apply cleanly
+- Add regression test for the bug if possible
+
+### React UI change
+- Component tests (Vitest)
+- E2E optional (Playwright) for critical flows
+
+## Minimum bar for incident fixes
+- Repro steps recorded
+- Regression test added (where feasible)
+- Tests pass locally/CI

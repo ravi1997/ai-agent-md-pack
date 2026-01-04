@@ -1,28 +1,28 @@
-# Workflow: Maintenance Mode (One-command friendly)
+# Workflow: Maintenance Mode (one-command patterns)
 
-## Goal
-Enable/disable maintenance mode across multiple apps with minimal manual steps.
+Choose one based on your setup.
 
-## Option A — Nginx-only (recommended)
-Pattern: switch a single include file or symlink.
+## Option 1 — Nginx-only (fastest)
+- Serve a static maintenance page
+- Keep upstream untouched
 
-### Enable
-- Create `maintenance_on.conf` that returns 503 with a friendly HTML page
-- Nginx site includes `include /etc/nginx/maintenance/maintenance_on.conf;` conditionally
-- Reload nginx
+Pattern:
+1) Add an `include` switch in nginx server block:
+   - `include /etc/nginx/snippets/maintenance.conf;`
+2) maintenance.conf either:
+   - `return 503;` with `error_page 503 /maintenance.html;`
+3) Enable/disable by swapping a symlink:
+   - `ln -sf /etc/nginx/snippets/maintenance_on.conf /etc/nginx/snippets/maintenance.conf`
+   - `nginx -t && systemctl reload nginx`
 
-### Disable
-- Remove/swap include to `maintenance_off.conf`
-- Reload nginx
-
-## Option B — App-level flag
+## Option 2 — App-level flag
 - Env var `MAINTENANCE=1`
-- Flask middleware returns maintenance page for non-admin routes
-- React shows banner based on `/api/status`
+- Flask middleware returns banner/503 for most routes
+- Leave health checks working
 
-## Option C — Combined
-Use Option A for hard block, Option B for graceful messaging.
+## Option 3 — Both (recommended for outages)
+- Nginx serves static page
+- App still reachable for admin/health
 
-## Artifacts
-- Update runbook: **artifacts/runbook_template.md**
-- Add maintenance page template if needed
+Artifacts:
+- record entry/exit times in `artifacts/INCIDENT_REPORT.md`

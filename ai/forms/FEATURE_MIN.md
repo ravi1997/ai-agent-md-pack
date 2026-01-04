@@ -1,9 +1,9 @@
-# Minimal Feature Input
+# Feature Minimal Form
 
-- Goal (1 sentence):
-- Users / roles:
-- Scope boundaries (what NOT to do):
-- Data model changes? (yes/no/unknown)
-- UI: Jinja/Tailwind or React?
-- Acceptance criteria (3-7 bullets):
-- Deadline / priority:
+1) Goal (one sentence):
+2) Scope (must-have only):
+3) Non-goals (what to avoid):
+4) UI or API or both:
+5) Acceptance criteria (3 bullets):
+6) Constraints (PHI, perf, security):
+7) Target ENV(s):

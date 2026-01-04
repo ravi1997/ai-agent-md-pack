@@ -1,18 +1,20 @@
-# Command Safety (Denylist + Safer Alternatives)
+# Command Safety (Denylist + safer alternatives)
 
-Even in dev, avoid catastrophic commands. If a command matches denylist patterns, stop and ask.
+Even in dev/staging, avoid catastrophic commands unless explicitly requested.
 
-## Denylist patterns (non-exhaustive)
-- `rm -rf /` or `rm -rf` on root paths
-- `mkfs*`, `dd if=... of=/dev/*`
+## Denylist patterns (block or require explicit confirmation)
+- `rm -rf /` or `rm -rf /*`
+- `mkfs*`, `dd if=`, raw disk writes (`/dev/sdX`)
+- `shutdown`, `reboot` (on servers)
 - `:(){ :|:& };:` (fork bomb)
-- `shutdown`, `reboot` (unless user explicitly requests)
-- `docker system prune -a` on production
-- `DROP DATABASE` / destructive SQL on production
+- `docker system prune -a --volumes` (data loss)
+- `truncate -s 0 /var/log/*` (destroys evidence)
 
 ## Safer alternatives
-- Prefer deleting **specific** folders (`./build`, `./.venv`) not global paths
-- Prefer pruning **a single project**: `docker compose down --remove-orphans` then `docker volume rm <project>_*`
-- Prefer DB backups before any destructive change:
-  - Postgres: `pg_dump ... > backup.sql`
-- Prefer staged rollouts with health checks
+- Use targeted deletes: `rm -rf ./build ./dist`
+- Use `docker image prune` (without volumes) first
+- Use `journalctl --vacuum-time=7d` rather than deleting logs
+- Use backups/exports before migrations or volume deletion
+
+## Evidence preservation rule
+Before any cleanup: store evidence (logs, configs, versions) in an incident artifact.

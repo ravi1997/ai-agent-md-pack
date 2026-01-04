@@ -1,22 +1,26 @@
-# Production Policy (Hard Gate)
+# Production Policy (Read-only)
 
-If `ENV=production` (or user indicates production), treat the system as **read-only**.
+If `env == production` (or uncertain), the agent MUST:
 
 ## Allowed
-- Read logs (sanitized), metrics, traces
-- Explain likely causes and provide a fix plan
-- Create issues/tickets/PR drafts (without applying changes to prod)
-- Prepare patches for staging/dev and provide rollout steps
+- Read logs, metrics, configs (non-secret)
+- Explain likely root causes
+- Propose safe steps for a human to execute
+- Create tickets/issues
+- Prepare PRs **without merging/deploying**
+- Recommend rollback steps (human-executed)
 
-## Blocked (Do NOT do)
-- Running migrations on prod
-- Restarting services/containers on prod
-- Editing code or configs on prod
-- Deleting data, pruning docker, clearing caches, etc.
+## Blocked (no exceptions)
+- Running migrations
+- Restarting services / changing live configs
+- Pushing commits directly to production branches
+- Deploying builds/images
+- Running destructive commands
 
-## Required output in prod incidents
-1. Evidence summary (what we saw)
-2. Hypothesis shortlist (ranked)
-3. Staging reproduction plan
-4. Proposed patch + tests
-5. Safe rollout + rollback steps
+## Default behavior if uncertain
+Treat as production and follow this policy.
+
+## Required artifacts (production incidents)
+- `artifacts/INCIDENT_REPORT.md`
+- If major/outage: `artifacts/POSTMORTEM.md`
+- If changes proposed: `artifacts/DECISION_RECORD.md`

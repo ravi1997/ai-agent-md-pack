@@ -1,12 +1,12 @@
-# AI Agent Markdown Pack — v2
+# AI Agent MD Pack — Version
 
-Generated: 2026-01-04
+- Current: **v4**
+- Date: 2026-01-04
+- Theme: **Project Autofill Defaults & Inference**
 
-Added:
-- Single entrypoint router (00_INDEX.md)
-- Minimal input forms (incident/feature/deploy)
-- Production read-only policy + command safety
-- Evidence checklist for nginx 502/504
-- Repo layout contracts + test strategy + quality gates
-- Reference map tags
-- Maintenance mode workflow
+## What's new in v4
+- Structured context block in `01_PROJECT_CONTEXT.md` for reliable parsing/autofill.
+- Autofill rules & heuristics for common Flask + Nginx + Docker + systemd layouts.
+- Standard variable dictionary (`CONTEXT_SCHEMA.md`) so agents stop asking repeat questions.
+- Path/service/port inference playbook + fallback behavior (prod-safe by default).
+- Quick routing updates to use inferred defaults when forms are blank.

@@ -1,12 +1,9 @@
-# Skill: pytest
+# SKILL: pytest Testing
 
-## Minimal structure
-- `tests/`
-- `pytest.ini` (optional)
-- Flask: use app factory + test client fixture
+Prefer:
+- unit tests for pure functions
+- request-level tests with Flask test client
+- integration tests for DB boundaries
+- regression tests for reported incidents
 
-## Regression test recipe
-1. Write failing test reproducing bug
-2. Run `pytest -q` to confirm fail
-3. Fix bug
-4. Run again to confirm pass
+See: `testing/TEST_STRATEGY.md`

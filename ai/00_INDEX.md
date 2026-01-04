@@ -1,45 +1,56 @@
-# AI Pack Entry Point
+# ENTRYPOINT — Router
 
-Use this file as the **single front door**. When a user gives *any* input, follow this routing.
+You are an agent working with this repo. Follow this router strictly.
 
-## 0) Always load context (no questions unless required)
-1. Read **01_PROJECT_CONTEXT.md** (fill gaps with sensible defaults).
-2. Read **profiles/default.md**.
-3. If `ENV=production`, switch to **profiles/production_safe.md** and apply **policy/PRODUCTION_POLICY.md**.
+## 0) Non-negotiables
+- **PHI/PII safety is ON**: follow `policy/PHI_SAFE_LOGGING.md`.
+- **Production is read-only**: follow `policy/PRODUCTION_POLICY.md`.
+- **Evidence first**: always run/collect the relevant checklist before proposing fixes.
+- **Quality gates**: before any “done”, pass `gates/QUALITY_GATES.md` and `gates/AGENT_SELF_CHECK.md`.
 
-## 1) Route the request
-Choose the first match:
+## 1) Detect environment
+1. Use `policy/ENV_DETECTION.md` to classify: `dev` / `staging` / `production`.
+2. If uncertain → treat as **production**.
 
-### A) Incident / Error / "something broke"
-Go to: **flows/INCIDENT_TRIAGE.md**
-- If nginx/gateway errors → **workflows/nginx_502_504.md** + **checklists/NGINX_502_EVIDENCE.md**
-- If docker build/run loops → **workflows/docker_dev_loop.md**
-- If systemd failures → **skills/systemd.md** + **workflows/debug_basic.md**
-- If DB/migrations → **workflows/db_migrations.md**
-- If security suspicion → **workflows/security.md** + **artifacts/security_checklist.md**
+## 2) Pick a profile (default if unsure)
+- `profiles/DEFAULT.md` (balanced)
+- `profiles/PROD_SAFE.md` (read-only, conservative)
+- `profiles/AUTOFIX_AGGRESSIVE.md` (dev/staging only)
 
-### B) Feature / Task / Change request
-Go to: **workflows/feature_delivery.md**
-- Use **forms/FEATURE_MIN.md** if requirements are unclear.
-- Produce: **artifacts/pr_summary.md** and update runbook if needed.
+## 3) Route by intent
+### A) Incident / error / outage
+Go to: `flows/INCIDENT_TRIAGE.md`
+- First: fill `forms/INCIDENT_MIN.md` (minimum inputs)
+- Then: collect evidence checklist per category (nginx/docker/systemd/migrations/perf)
+- Then: run fix loop `flows/AUTOFIX_LOOP.md`
 
-### C) Performance / Slowness / High CPU/RAM
-Go to: **workflows/performance.md** + **skills/sentry_obs.md**
-- Collect metrics + traces; propose minimal fixes.
+### B) Feature / task / refactor
+Go to: `workflows/feature_delivery.md`
+- First: fill `forms/FEATURE_MIN.md`
+- Then: follow `workflows/feature_delivery.md` with `testing/TEST_STRATEGY.md`
 
-### D) Maintenance mode / planned downtime
-Go to: **workflows/maintenance_mode.md**
-- Produce: **artifacts/runbook_template.md**.
+### C) Deploy / maintenance / migration
+Go to: `workflows/deploy_and_migrate.md`
+- First: fill `forms/DEPLOY_MIN.md`
+- Then: use `workflows/maintenance_mode.md` or `workflows/rollback_recovery.md` as needed
 
-### E) General “how do I…”
-Use the most relevant **skills/** file and end with a runnable checklist.
+### D) Security concern
+Go to: `workflows/security_incident.md`
+- Use `security/BASELINE.md` and `skills/security_hardening.md`
 
-## 2) Output rules (min-input, max-action)
-- Prefer **one compact set** of steps over many branches.
-- When ambiguous, ask at most **one** question, then proceed with best assumptions.
-- Always end with **next command to run** (or exact file changes) and a verification step.
+### E) Performance issue
+Go to: `workflows/performance_profiling.md`
+- Use `checklists/PERF_REGRESSION_EVIDENCE.md`
 
-## 3) Mandatory safety
-- PHI/PII-safe by default (see **skills/logging_redaction.md**).
-- No destructive commands unless explicitly requested and confirmed.
-- Production is read-only for changes (see **policy/PRODUCTION_POLICY.md**).
+## 4) Outputs (artifacts)
+When closing work, produce:
+- Incident: `artifacts/INCIDENT_REPORT.md` (+ `artifacts/POSTMORTEM.md` if major)
+- PR: `artifacts/PR_SUMMARY.md`
+- Decisions: `artifacts/DECISION_RECORD.md` (ADR-lite)
+
+## 5) Reference map
+Use `REFERENCE_MAP.md` for tags like `FLOW:INCIDENT_TRIAGE` or `SKILL:NGINX_502`.
+
+
+## Autofill-first rule (v4)
+Agents MUST read `01_PROJECT_CONTEXT.md` → `AUTO_CONTEXT` and infer missing values using `autofill/PATH_AND_SERVICE_INFERENCE.md` before asking questions.

@@ -1,13 +1,10 @@
-# Skill: systemd Services
+# SKILL: systemd Services
 
-## Common unit fields
-- `WorkingDirectory=`
-- `EnvironmentFile=`
-- `User=`
-- `ExecStart=`
-- `Restart=on-failure`
-- `RestartSec=`
+Key pitfalls:
+- wrong WorkingDirectory
+- missing EnvironmentFile variables
+- permissions for log dirs/sockets
+- user/group mismatch
 
-## Diagnosis
-- `systemctl status -l <svc>`
-- `journalctl -u <svc> -b -n 200 --no-pager`
+Evidence checklist:
+- `checklists/SYSTEMD_FAIL_EVIDENCE.md`
