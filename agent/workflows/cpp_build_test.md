@@ -12,10 +12,12 @@
 - [ ] Capture configuration errors in `artifacts/BUILD_LOG.md`.
 
 ## 3. Compilation
+// turbo
 - [ ] Run build: `cmake --build build -j$(nproc)`.
 - [ ] If fail: Run `checklists/CPP_BUILD_ERROR_EVIDENCE.md` and fix.
 
 ## 4. Testing
+// turbo
 - [ ] Run CTest: `ctest --test-dir build --output-on-failure`.
 - [ ] If fail: Analyze log, fix, and repeat from Step 3.
 

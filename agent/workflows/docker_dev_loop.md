@@ -20,6 +20,7 @@
 ## Step 1: Diagnose
 
 ### Check Docker Status
+// turbo
 ```bash
 # Docker running?
 docker ps
@@ -95,6 +96,7 @@ docker-compose logs -f
 
 ## Step 3: Verify
 
+// turbo
 ```bash
 # All containers running?
 docker-compose ps

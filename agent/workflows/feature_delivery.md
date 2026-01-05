@@ -210,6 +210,7 @@ pytest --cov=app tests/
 Ensure all quality checks pass before creating PR.
 
 ### Gate 1: Tests
+// turbo
 ```bash
 # All tests must pass
 pytest -v
@@ -217,6 +218,7 @@ pytest -v
 ```
 
 ### Gate 2: Linting
+// turbo
 ```bash
 # Code must be formatted
 ruff format .
@@ -227,6 +229,7 @@ ruff check .
 ```
 
 ### Gate 3: Security
+// turbo
 ```bash
 # Check for secrets
 grep -r "api_key\|password\|secret" . --exclude-dir=.git

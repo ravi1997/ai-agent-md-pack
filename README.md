@@ -34,6 +34,33 @@ Agent: ✅ Detected Python Flask
 ```
 **No manual configuration needed!**
 
+- [`workflows/feature_delivery.md`](agent/workflows/feature_delivery.md) - Standard feature implementation flow
+- [`workflows/docker_dev_loop.md`](agent/workflows/docker_dev_loop.md) - Container development cycle
+- [`workflows/deploy_and_migrate.md`](agent/workflows/deploy_and_migrate.md) - Safe deployment process
+- [`workflows/maintenance_mode.md`](agent/workflows/maintenance_mode.md) - Handling maintenance windows
+- [`workflows/rollback_recovery.md`](agent/workflows/rollback_recovery.md) - Emergency recovery procedures
+- [`workflows/security_incident.md`](agent/workflows/security_incident.md) - Security response flow
+- [`workflows/security_sqli_path.md`](agent/workflows/security_sqli_path.md) - SQL injection remediation
+- [`workflows/performance_profiling.md`](agent/workflows/performance_profiling.md) - performance debugging
+- [`workflows/performance.md`](agent/workflows/performance.md) - General optimization flow
+- [`01_PROJECT_CONTEXT.md`](agent/01_PROJECT_CONTEXT.md) - Project metadata and tech stack
+- [`02_CONVENTIONS.md`](agent/02_CONVENTIONS.md) - Code style and patterns
+- [`03_DEFAULTS.md`](agent/03_DEFAULTS.md) - Standard configurations
+- [`REFERENCE_MAP.md`](agent/REFERENCE_MAP.md) - Complete file index
+
+### 4. Routing
+- [`00_INDEX.md`](agent/00_INDEX.md) - Main entry point
+- [`REFERENCE_MAP.md`](agent/REFERENCE_MAP.md) - File locations
+- [`ROUTING_RULES.md`](agent/ROUTING_RULES.md) - Decision logic
+
+## 🚀 Getting Started
+
+1. Copy the [`agent/`](agent/) folder to your project root
+2. Read [`QUICKSTART.md`](agent/QUICKSTART.md)
+3. Consult [`COPY_INTO_NEW_REPO.md`](agent/COPY_INTO_NEW_REPO.md) for setup details
+
+### Common Commands
+See [`10_COMMANDS.md`](agent/10_COMMANDS.md) for the full list.
 ### 🛡️ **Hallucination Prevention**
 - 8 comprehensive validation checklists
 - Evidence-based decisions only
@@ -55,16 +82,14 @@ Agent: ✅ Detected Python Flask
 - Complete validation at every step
 
 ---
-## Date
 Generated: 2026-01-04 (Asia/Kolkata)
 
 ---
 If your agent supports “profiles”, use:
 - **Default**: `agent/profiles/default.md`
-- **Production-safe**: `agent/profiles/production_safe.md`
-- **Aggressive auto-fix**: `agent/profiles/aggressive_autofix.md`
-
-## Changelog
+## 📚 Documentation
+- [`TAXONOMY.md`](agent/TAXONOMY.md) - Error categories
+- [`VERSION.md`](agent/VERSION.md) - Changelog
 
 # Changelog
 
