@@ -1,6 +1,25 @@
 # ENTRYPOINT — Router
 
+**Purpose:** Route all requests to the appropriate workflow
+**When to use:** Every single request - this is your starting point
+**Prerequisites:** None - start here always
+**Outputs:** Workflow path to follow
+
+---
+
+## CRITICAL: Read This First
+
 You are an agent working with this repo. Follow this router strictly.
+
+### Before Routing - Validation Checklist
+
+Agent MUST verify:
+- [ ] I have read `01_PROJECT_CONTEXT.md` (not assumed values)
+- [ ] I have detected the environment correctly
+- [ ] I understand the user's request clearly
+- [ ] I will state which route I'm taking before proceeding
+
+**If any checkbox is unchecked, STOP and complete it first.**
 
 ## Quick Reference
 
@@ -137,26 +156,116 @@ Use `REFERENCE_MAP.md` for tags like `FLOW:INCIDENT_TRIAGE` or `SKILL:NGINX_502`
 ## 6) Autofill-first rule (v4)
 Agents MUST read `01_PROJECT_CONTEXT.md` → `AUTO_CONTEXT` and infer missing values using `autofill/PATH_AND_SERVICE_INFERENCE.md` before asking questions.
 
+## Routing Confidence Check
+
+**Before proceeding with any route, agent MUST:**
+
+1. **State the route:** "I am routing this to [WORKFLOW_NAME] because [REASON]"
+2. **Confirm confidence:** "Confidence level: [HIGH/MEDIUM/LOW]"
+3. **If confidence is LOW:** Ask user to confirm before proceeding
+
+### Routing Decision Matrix
+
+| User Request Contains | Primary Route | Confidence Check |
+|----------------------|---------------|------------------|
+| error, 502, 504, crash, exception | `flows/INCIDENT_TRIAGE.md` | Check logs exist |
+| implement, feature, add, create | `workflows/feature_delivery.md` | Check requirements clear |
+| deploy, release, migrate | `workflows/deploy_and_migrate.md` | Check environment known |
+| security, attack, injection | `workflows/security_incident.md` | Check severity |
+| slow, latency, performance | `workflows/performance_profiling.md` | Check metrics available |
+
+---
+
+## Fallback Handling
+
+### If No Route Matches
+
+**DO NOT GUESS.** Follow this procedure:
+
+1. **Analyze request type:**
+   - Is it a question? → Answer directly, no workflow needed
+   - Is it a problem? → Default to `flows/INCIDENT_TRIAGE.md`
+   - Is it a task? → Default to `workflows/feature_delivery.md`
+   - Still unclear? → Ask user to clarify
+
+2. **State your reasoning:**
+   ```
+   "I cannot confidently match this request to a workflow.
+   Request appears to be: [QUESTION/PROBLEM/TASK/UNCLEAR]
+   Suggested route: [ROUTE] or [ASK FOR CLARIFICATION]
+   "
+   ```
+
+3. **Never proceed without confidence**
+
+---
+
 ## Troubleshooting
 
 ### Can't determine which workflow to use?
-1. Check `ROUTING_RULES.md` for keyword matching
-2. Look at `TAXONOMY.md` for error classification
-3. Default to `flows/INCIDENT_TRIAGE.md` for errors
-4. Default to `workflows/feature_delivery.md` for tasks
+1. **First:** Re-read the user's request carefully
+2. **Second:** Check `ROUTING_RULES.md` for keyword matching
+3. **Third:** Look at `TAXONOMY.md` for error classification
+4. **Fourth:** Ask user: "Is this an incident, feature request, or deployment?"
+5. **Never:** Guess or assume
+
+**Default routes (only if confident):**
+- Errors/problems → `flows/INCIDENT_TRIAGE.md`
+- Features/tasks → `workflows/feature_delivery.md`
+- Questions → Answer directly
 
 ### Missing project context?
-1. Read `01_PROJECT_CONTEXT.md` first
-2. Use `autofill/PATH_AND_SERVICE_INFERENCE.md` to infer
-3. Ask minimal questions via `forms/PROJECT_CONTEXT_MIN.md`
+1. **Required:** Read `01_PROJECT_CONTEXT.md` first (not optional)
+2. **If incomplete:** Use `autofill/PATH_AND_SERVICE_INFERENCE.md` to infer
+3. **If still missing critical info:** Use `forms/PROJECT_CONTEXT_MIN.md`
+4. **Never:** Proceed with assumed values
 
 ### Uncertain about environment?
-1. Check `policy/ENV_DETECTION.md`
-2. When in doubt → treat as **production** (read-only)
+1. **Check:** `policy/ENV_DETECTION.md` for detection rules
+2. **Validate:** Confirm detected environment with user if uncertain
+3. **Safety rule:** When in doubt → treat as **production** (read-only)
+4. **Never:** Assume development environment
 
 ### Need to skip a step?
-- Never skip evidence collection for incidents
-- Never skip quality gates before completion
-- Never skip PHI/PII redaction
-- Can skip forms if context is complete
+
+**NEVER skip:**
+- ❌ Evidence collection for incidents
+- ❌ Quality gates before completion
+- ❌ PHI/PII redaction
+- ❌ Reading `01_PROJECT_CONTEXT.md`
+- ❌ Environment detection
+
+**Can skip (if conditions met):**
+- ✅ Forms if context is complete
+- ✅ Autofill if all values provided
+- ✅ Examples if workflow is clear
+
+---
+
+## Hallucination Prevention
+
+### Before Proceeding to Any Workflow
+
+Agent MUST verify:
+
+```markdown
+## Pre-Flight Checklist
+- [ ] I have READ (not assumed) the actual content of 01_PROJECT_CONTEXT.md
+- [ ] I have CONFIRMED (not guessed) the environment
+- [ ] I have STATED which workflow I'm using
+- [ ] I have VALIDATED my routing decision
+- [ ] I can CITE specific evidence for my choice
+
+If any item is unchecked: STOP and complete it.
+```
+
+### Red Flags - Stop Immediately If:
+
+- 🚩 You're about to assume a value you haven't read
+- 🚩 You're guessing which workflow to use
+- 🚩 You're proceeding without reading context
+- 🚩 You're unsure but proceeding anyway
+- 🚩 You can't cite specific evidence for your decision
+
+**If you see any red flag: STOP, ask for clarification, do not proceed.**
 

@@ -1,25 +1,126 @@
-# Workflow: Docker Dev Loop (Rebuilds/Watchers Triggering Repeatedly)
+# Workflow: Docker Development Loop
 
-## Symptom
-- container rebuilds continuously
-- watch triggers on build artifacts
-- CPU pegged by file watchers
+**Purpose:** Debug Docker build and runtime issues
+**When to use:** Docker build fails, containers won't start, or development loop broken
+**Prerequisites:** Docker installed, docker-compose.yml exists
+**Estimated time:** 15-30 minutes
+**Outputs:** Working Docker environment
 
-## Fix strategy
-1. Identify watcher tool (watchfiles, nodemon, vite, celery reload, etc.)
-2. Ensure build output dirs are excluded:
-   - Python: ignore `build/`, `.pytest_cache`, `__pycache__`, `.mypy_cache`
-   - Node: ignore `node_modules/`, `dist/`, `.vite/`
-3. For bind mounts:
-   - mount only source dirs, not build outputs
-4. For docker compose:
-   - use named volumes for build dirs to avoid host triggers
-5. For Vite/React:
-   - set `server.watch.ignored` patterns
-6. For Python reload:
-   - configure watchfiles exclude patterns
-7. Validate: modify a source file triggers exactly one rebuild
+---
 
-## Output
-- Updated compose mounts and watcher config
-- Verification steps
+## Prerequisites
+
+- [ ] Docker is installed and running
+- [ ] docker-compose.yml exists
+- [ ] You have disk space (check `df -h`)
+- [ ] Environment detected
+
+---
+
+## Step 1: Diagnose
+
+### Check Docker Status
+```bash
+# Docker running?
+docker ps
+
+# Check logs
+docker-compose logs
+
+# Check disk space
+docker system df
+```
+
+### Common Issues
+
+**A) Build Failure**
+```bash
+# Check build output
+docker-compose build --no-cache
+
+# Common causes:
+# - No space left
+# - Network timeout
+# - Missing dependency
+```
+
+**B) Container Won't Start**
+```bash
+# Check why
+docker-compose up
+# Look for:
+# - Port already in use
+# - Volume mount errors
+# - Environment variable missing
+```
+
+**C) Permission Denied**
+```bash
+# Check file permissions
+ls -la
+
+# Fix ownership
+sudo chown -R $USER:$USER .
+```
+
+---
+
+## Step 2: Fix
+
+### Clean Up (if needed)
+```bash
+# Remove old containers
+docker-compose down
+
+# Clean system
+docker system prune -a
+
+# Remove volumes (careful!)
+docker volume prune
+```
+
+### Rebuild
+```bash
+# Build fresh
+docker-compose build --no-cache
+
+# Start
+docker-compose up -d
+
+# Check logs
+docker-compose logs -f
+```
+
+---
+
+## Step 3: Verify
+
+```bash
+# All containers running?
+docker-compose ps
+# Expected: All "Up"
+
+# Test application
+curl http://localhost:8000/healthz
+# Expected: 200 OK
+
+# Check logs for errors
+docker-compose logs | grep -i error
+# Expected: No critical errors
+```
+
+---
+
+## Completion Criteria
+
+- ✅ All containers running
+- ✅ Application accessible
+- ✅ No errors in logs
+- ✅ Can make code changes and see updates
+
+---
+
+## See Also
+
+- [`../checklists/DOCKER_BUILD_FAIL_EVIDENCE.md`](../checklists/DOCKER_BUILD_FAIL_EVIDENCE.md)
+- [`../skills/docker_compose_debug.md`](../skills/docker_compose_debug.md)

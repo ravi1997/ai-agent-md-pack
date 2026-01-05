@@ -1,8 +1,21 @@
 # AI Agent Configuration Pack
 
-**Version:** 4.0  
+**Version:** 4.1  
 **Last Updated:** 2026-01-05  
 **Purpose:** Drop-in markdown configuration for AI-powered development, testing, and maintenance
+
+**🌟 NEW: Universal Project Support** - Works with ANY language, framework, or build system!
+
+---
+
+## 🎯 Works With Everything
+
+**Languages:** Python • C++ • Java • Go • Rust • Flutter • JavaScript • HTML/CSS • and more  
+**Build Systems:** CMake • Makefile • Maven • Gradle • Cargo • npm • UV • pip • and more  
+**Frameworks:** Flask • React • Spring Boot • Express • FastAPI • Next.js • and more  
+**Deployment:** Docker • systemd • Kubernetes • Serverless • Manual
+
+**→ See [`UNIVERSAL_SUPPORT.md`](UNIVERSAL_SUPPORT.md) for complete list**
 
 ---
 
