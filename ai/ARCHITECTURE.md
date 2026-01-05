@@ -366,7 +366,7 @@ graph LR
    ```
    - WORKFLOW:YOUR_WORKFLOW → workflows/your_workflow.md
    ```
-4. Update routing in `00_INDEX.md` if needed
+4. Update routing in `00_INDEX.md` when adding new request types
 
 ### Adding Custom Skills
 

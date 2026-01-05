@@ -46,9 +46,9 @@ Add this section to your project's `README.md`:
 
 This project uses AI agent configuration for automated development, testing, and maintenance.
 
-**Agent docs:** [`ai/00_INDEX.md`](ai/00_INDEX.md)
+**Agent docs:** [`ai/00_INDEX.md`](00_INDEX.md)
 
-**Quick commands:** [`ai/10_COMMANDS.md`](ai/10_COMMANDS.md)
+**Quick commands:** [`ai/10_COMMANDS.md`](10_COMMANDS.md)
 ```
 
 ### 4) Start working

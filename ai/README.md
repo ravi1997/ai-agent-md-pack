@@ -277,7 +277,7 @@ See [`profiles/`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pac
 1. Create new file in `workflows/`
 2. Follow existing template structure
 3. Add reference to [`REFERENCE_MAP.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/REFERENCE_MAP.md)
-4. Update routing in [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/00_INDEX.md) if needed
+4. Update routing in [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/00_INDEX.md) when adding new request types
 
 ---
 
