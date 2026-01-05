@@ -124,4 +124,4 @@ The system is:
 
 The AI Agent MD Pack is production-ready and can be deployed to any project immediately.
 
-**Copy the `.agent/` folder to any project and start using it in 30 seconds!**
+**Copy the `agent/` folder to any project and start using it in 30 seconds!**

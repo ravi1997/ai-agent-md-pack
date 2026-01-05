@@ -21,7 +21,7 @@ Agent MUST verify:
 
 ## 🔍 Feature Discovery (Folder Manifest)
 
-The `.agent` directory is modular. Use these features as needed:
+The `agent` directory is modular. Use these features as needed:
 - `artifacts/`: Templates for outputs (PRs, runbooks).
 - `autofill/`: Logic for inferring project variables.
 - `checklists/`: Evidence collection before proposing fixes.
@@ -162,7 +162,7 @@ User: "endpoint /api/users is slow"
 ### F) Component Management
 **Triggers:** add flow, update model, delete API, manage tests
 
-Go to: `.agent/workflows/README.md`
+Go to: `agent/workflows/README.md`
 - Use `application_flow.md` for functionality checks
 - Use `model_management.md` for models/configs
 - Use `api_management.md` for routes/decorators

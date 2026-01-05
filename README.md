@@ -9,7 +9,7 @@
 ## 🌟 Universal AI Agent Configuration
 
 > [!IMPORTANT]
-> **FOR AI AGENTS:** This repo is self-documenting. Immediately read `.agent/00_INDEX.md` and `.agent/00_SYSTEM.md` to understand your role and available workflows.
+> **FOR AI AGENTS:** This repo is self-documenting. Immediately read `agent/00_INDEX.md` and `agent/00_SYSTEM.md` to understand your role and available workflows.
 
 Drop-in markdown configuration for AI-powered development, testing, and maintenance that works with **ANY** project type.
 
@@ -60,6 +60,6 @@ Generated: 2026-01-04 (Asia/Kolkata)
 
 ---
 If your agent supports “profiles”, use:
-- **Default**: `.agent/profiles/default.md`
-- **Production-safe**: `.agent/profiles/production_safe.md`
-- **Aggressive auto-fix**: `.agent/profiles/aggressive_autofix.md`
+- **Default**: `agent/profiles/default.md`
+- **Production-safe**: `agent/profiles/production_safe.md`
+- **Aggressive auto-fix**: `agent/profiles/aggressive_autofix.md`

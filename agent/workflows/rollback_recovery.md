@@ -188,7 +188,7 @@ sudo journalctl -u myapp -f
 ### Document the Incident
 ```bash
 # Create incident report
-cp .agent/artifacts/incident_report.md incidents/rollback-YYYYMMDD.md
+cp agent/artifacts/incident_report.md incidents/rollback-YYYYMMDD.md
 # Fill in:
 # - What failed
 # - Why we rolled back

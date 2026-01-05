@@ -2,11 +2,11 @@
 
 ## Quick Setup
 
-### 1) Copy `.agent/` folder to repo root
+### 1) Copy `agent/` folder to repo root
 
 ```bash
 # Option A: Direct copy
-cp -r /path/to/ai-agent-md-pack/.agent /path/to/your/project/
+cp -r /path/to/ai-agent-md-pack/agent /path/to/your/project/
 
 # Option B: Clone then copy
 git clone <template-repo-url>
@@ -14,11 +14,11 @@ cp -r ai-agent-md-pack/ai /path/to/your/project/
 cd /path/to/your/project/
 
 # Verify
-ls -la .agent/
+ls -la agent/
 # Should see: 00_INDEX.md, 00_SYSTEM.md, 01_PROJECT_CONTEXT.md, etc.
 ```
 
-### 2) Fill `.agent/01_PROJECT_CONTEXT.md`
+### 2) Fill `agent/01_PROJECT_CONTEXT.md`
 
 Open the file and edit the `AUTO_CONTEXT` YAML block:
 
@@ -46,14 +46,14 @@ Add this section to your project's `README.md`:
 
 This project uses AI agent configuration for automated development, testing, and maintenance.
 
-**Agent docs:** [`.agent/00_INDEX.md`](00_INDEX.md)
+**Agent docs:** [`agent/00_INDEX.md`](00_INDEX.md)
 
-**Quick commands:** [`.agent/10_COMMANDS.md`](10_COMMANDS.md)
+**Quick commands:** [`agent/10_COMMANDS.md`](10_COMMANDS.md)
 ```
 
 ### 4) Start working
 
-Follow [`.agent/QUICKSTART.md`](QUICKSTART.md) to begin using AI agents.
+Follow [`agent/QUICKSTART.md`](QUICKSTART.md) to begin using AI agents.
 
 ---
 
@@ -63,26 +63,26 @@ After copying, verify the setup:
 
 ### ✅ Check 1: Files exist
 ```bash
-ls .agent/00_INDEX.md .agent/00_SYSTEM.md .agent/01_PROJECT_CONTEXT.md
+ls agent/00_INDEX.md agent/00_SYSTEM.md agent/01_PROJECT_CONTEXT.md
 # Should show all three files
 ```
 
 ### ✅ Check 2: Context is filled
 ```bash
-grep "app_name:" .agent/01_PROJECT_CONTEXT.md
+grep "app_name:" agent/01_PROJECT_CONTEXT.md
 # Should show your app name, not empty string
 ```
 
 ### ✅ Check 3: Directory structure
 ```bash
-ls .agent/
+ls agent/
 # Should see: workflows/, checklists/, policy/, forms/, artifacts/, skills/, profiles/, etc.
 ```
 
 ### ✅ Check 4: Test with agent
 Give your AI agent this command:
 ```
-"Read .agent/00_INDEX.md and tell me what workflows are available"
+"Read agent/00_INDEX.md and tell me what workflows are available"
 ```
 
 Agent should respond with a list of workflows.
@@ -92,7 +92,7 @@ Agent should respond with a list of workflows.
 ## Common Pitfalls & Solutions
 
 ### ❌ Pitfall 1: Copied to wrong location
-**Problem:** `.agent/` folder is in subdirectory, not root
+**Problem:** `agent/` folder is in subdirectory, not root
 
 **Solution:**
 ```bash
@@ -100,7 +100,7 @@ Agent should respond with a list of workflows.
 mv some/subdirectory/ai ./
 ```
 
-**Verify:** `ls .agent/00_INDEX.md` should work from project root
+**Verify:** `ls agent/00_INDEX.md` should work from project root
 
 ---
 
@@ -108,7 +108,7 @@ mv some/subdirectory/ai ./
 **Problem:** Agent asks too many questions
 
 **Solution:**
-- Open `.agent/01_PROJECT_CONTEXT.md`
+- Open `agent/01_PROJECT_CONTEXT.md`
 - Fill at minimum: `app_name` and `env`
 - Fill more fields if you know them
 
@@ -128,9 +128,9 @@ mv some/subdirectory/ai ./
 **Problem:** Agent doesn't seem to know about workflows
 
 **Solution:**
-- Explicitly tell agent: "Read .agent/00_INDEX.md"
+- Explicitly tell agent: "Read agent/00_INDEX.md"
 - Check that files weren't corrupted during copy
-- Verify file permissions: `chmod -R u+r .agent/`
+- Verify file permissions: `chmod -R u+r agent/`
 
 ---
 
@@ -149,19 +149,19 @@ mv some/subdirectory/ai ./
 After copying, you may want to customize:
 
 ### Project-specific conventions
-Edit [`.agent/02_CONVENTIONS.md`](02_CONVENTIONS.md):
+Edit [`agent/02_CONVENTIONS.md`](02_CONVENTIONS.md):
 - Code style preferences
 - Git commit format
 - Security rules specific to your domain
 
 ### Default behaviors
-Edit [`.agent/03_DEFAULTS.md`](03_DEFAULTS.md):
+Edit [`agent/03_DEFAULTS.md`](03_DEFAULTS.md):
 - Preferred testing framework
 - Linting tools
 - Database migration approach
 
 ### Custom workflows
-Add new workflows to [`.agent/workflows/`](workflows/):
+Add new workflows to [`agent/workflows/`](workflows/):
 1. Create `workflows/your_workflow.md`
 2. Follow existing template structure
 3. Add reference to `REFERENCE_MAP.md`

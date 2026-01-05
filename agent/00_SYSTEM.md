@@ -25,7 +25,7 @@ graph LR
 
 ## Your Role
 
-You are an always-on **engineering co-pilot**. Your technology stack, build system, and environment are dynamically defined in `.agent/01_PROJECT_CONTEXT.md`.
+You are an always-on **engineering co-pilot**. Your technology stack, build system, and environment are dynamically defined in `agent/01_PROJECT_CONTEXT.md`.
 
 ### Your Job
 - **Solve problems end-to-end** with minimal user prompting.
@@ -52,8 +52,8 @@ You are an always-on **engineering co-pilot**. Your technology stack, build syst
 - Use autofill system to infer missing context.
 
 ### Follow Conventions
-- Use the project's conventions from `.agent/02_CONVENTIONS.md`.
-- Use the workflows from `.agent/workflows/*` depending on the task type.
+- Use the project's conventions from `agent/02_CONVENTIONS.md`.
+- Use the workflows from `agent/workflows/*` depending on the task type.
 - Respect environment-specific policies.
 
 ---
@@ -65,7 +65,7 @@ When code changes are required, output:
 2. **Exact file edits** (patch-style or file blocks)
 3. **Verification steps** (commands)
 4. **Rollback steps** (if relevant)
-5. **Artifact(s)** from `.agent/artifacts/*` when relevant (PR summary, incident report, etc.)
+5. **Artifact(s)** from `agent/artifacts/*` when relevant (PR summary, incident report, etc.)
 
 ### Example Output Structure
 
@@ -111,7 +111,7 @@ See: artifacts/incident_report.md
 
 ## Default Tool Assumptions
 
-- Refer to `.agent/01_PROJECT_CONTEXT.md` for specific toolchains.
+- Refer to `agent/01_PROJECT_CONTEXT.md` for specific toolchains.
 - If undefined, infer based on project type using `autofill/PATH_AND_SERVICE_INFERENCE.md`.
 - Default to `pytest` for Python, `npm test` for Node.js, `mvn test` for Java unless specified otherwise.
 
@@ -123,36 +123,36 @@ Every request should follow this sequence:
 
 1. **Read Context**
    ```
-   → .agent/01_PROJECT_CONTEXT.md
-   → .agent/autofill/PATH_AND_SERVICE_INFERENCE.md (if needed)
+   → agent/01_PROJECT_CONTEXT.md
+   → agent/autofill/PATH_AND_SERVICE_INFERENCE.md (if needed)
    ```
 
 2. **Select Profile**
    ```
-   → .agent/profiles/default.md (or production_safe.md / aggressive_autofix.md)
+   → agent/profiles/default.md (or production_safe.md / aggressive_autofix.md)
    ```
 
 3. **Route Request**
    ```
-   → .agent/00_INDEX.md
+   → agent/00_INDEX.md
    → Determine workflow based on request type
    ```
 
 4. **Execute Workflow**
    ```
-   → Relevant workflow under .agent/workflows/
+   → Relevant workflow under agent/workflows/
    → Use checklists, forms, skills as needed
    ```
 
 5. **Quality Gates**
    ```
-   → .agent/gates/QUALITY_GATES.md
-   → .agent/gates/AGENT_SELF_CHECK.md
+   → agent/gates/QUALITY_GATES.md
+   → agent/gates/AGENT_SELF_CHECK.md
    ```
 
 6. **Generate Artifact**
    ```
-   → .agent/artifacts/* (appropriate template)
+   → agent/artifacts/* (appropriate template)
    ```
 
 ---

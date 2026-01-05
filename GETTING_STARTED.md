@@ -2,25 +2,25 @@
 
 ## For Existing Projects (5 minutes)
 
-### Step 1: Copy the `.agent/` folder
+### Step 1: Copy the `agent/` folder
 ```bash
 # Navigate to your project
 cd /path/to/your/project
 
 # Copy the ai folder
-cp -r /path/to/ai-agent-md-pack/.agent ./
+cp -r /path/to/ai-agent-md-pack/agent ./
 
 # Verify
-ls -la .agent/
+ls -la agent/
 # You should see: 00_INDEX.md, 01_PROJECT_CONTEXT.md, workflows/, etc.
 ```
 
 ### Step 2: Fill Project Context (2 minutes)
 ```bash
 # Open the context file
-nano .agent/01_PROJECT_CONTEXT.md
+nano agent/01_PROJECT_CONTEXT.md
 # or
-code .agent/01_PROJECT_CONTEXT.md
+code agent/01_PROJECT_CONTEXT.md
 ```
 
 **Fill only these 2 required fields:**
@@ -38,13 +38,13 @@ env: "dev"                        # dev, staging, or production
 ### Step 3: Start Using
 ```bash
 # Tell your AI agent:
-"Read .agent/00_INDEX.md and help me fix this error: [paste error]"
+"Read agent/00_INDEX.md and help me fix this error: [paste error]"
 
 # Or for features:
-"Read .agent/00_INDEX.md and implement: user authentication"
+"Read agent/00_INDEX.md and implement: user authentication"
 
 # Or for deployment:
-"Read .agent/00_INDEX.md and deploy to staging"
+"Read agent/00_INDEX.md and deploy to staging"
 ```
 
 **That's it!** The AI agent will:
@@ -67,7 +67,7 @@ cd my-new-project
 git init
 
 # Copy AI folder
-cp -r /path/to/ai-agent-md-pack/.agent ./
+cp -r /path/to/ai-agent-md-pack/agent ./
 ```
 
 ### Step 2: Choose Your Stack
@@ -81,7 +81,7 @@ touch requirements.txt
 touch wsgi.py
 
 # Tell AI:
-"Read .agent/00_INDEX.md and set up a Flask project with:
+"Read agent/00_INDEX.md and set up a Flask project with:
 - User authentication
 - Database (PostgreSQL)
 - Docker setup"
@@ -93,10 +93,10 @@ touch wsgi.py
 npm create vite@latest . -- --template react
 
 # Copy AI folder
-cp -r /path/to/ai-agent-md-pack/.agent ./
+cp -r /path/to/ai-agent-md-pack/agent ./
 
 # Tell AI:
-"Read .agent/00_INDEX.md and set up:
+"Read agent/00_INDEX.md and set up:
 - Tailwind CSS
 - React Router
 - API integration"
@@ -108,15 +108,15 @@ cp -r /path/to/ai-agent-md-pack/.agent ./
 # (whatever your stack needs)
 
 # Copy AI folder
-cp -r /path/to/ai-agent-md-pack/.agent ./
+cp -r /path/to/ai-agent-md-pack/agent ./
 
 # Tell AI:
-"Read .agent/00_INDEX.md and help me set up [your stack]"
+"Read agent/00_INDEX.md and help me set up [your stack]"
 ```
 
 ### Step 3: Fill Project Context
 ```bash
-nano .agent/01_PROJECT_CONTEXT.md
+nano agent/01_PROJECT_CONTEXT.md
 ```
 
 **Minimal required:**
@@ -136,7 +136,7 @@ build_system: "pip"             # Will auto-detect
 ### Step 4: Let AI Build Your Project
 ```bash
 # Tell your AI agent:
-"Read .agent/00_INDEX.md and:
+"Read agent/00_INDEX.md and:
 1. Set up the project structure
 2. Create initial files
 3. Set up Docker
@@ -158,23 +158,23 @@ Once set up, use these commands with your AI:
 
 ### Development
 ```
-"Read .agent/00_INDEX.md and implement feature: [feature name]"
-"Read .agent/00_INDEX.md and fix this bug: [paste error]"
-"Read .agent/00_INDEX.md and add tests for [component]"
+"Read agent/00_INDEX.md and implement feature: [feature name]"
+"Read agent/00_INDEX.md and fix this bug: [paste error]"
+"Read agent/00_INDEX.md and add tests for [component]"
 ```
 
 ### Debugging
 ```
-"Read .agent/00_INDEX.md and debug: 502 error"
-"Read .agent/00_INDEX.md and fix: Docker won't start"
-"Read .agent/00_INDEX.md and investigate: slow performance"
+"Read agent/00_INDEX.md and debug: 502 error"
+"Read agent/00_INDEX.md and fix: Docker won't start"
+"Read agent/00_INDEX.md and investigate: slow performance"
 ```
 
 ### Operations
 ```
-"Read .agent/00_INDEX.md and deploy to staging"
-"Read .agent/00_INDEX.md and run database migration"
-"Read .agent/00_INDEX.md and create rollback plan"
+"Read agent/00_INDEX.md and deploy to staging"
+"Read agent/00_INDEX.md and run database migration"
+"Read agent/00_INDEX.md and create rollback plan"
 ```
 
 ---
@@ -210,21 +210,21 @@ Once set up, use these commands with your AI:
 → Check `repo_root` in `01_PROJECT_CONTEXT.md`
 
 ### "Wrong workflow selected"
-→ Be specific in your request: "Read .agent/00_INDEX.md and [specific task]"
+→ Be specific in your request: "Read agent/00_INDEX.md and [specific task]"
 
 ### "AI asking too many questions"
 → Fill more fields in `01_PROJECT_CONTEXT.md` (optional but helps)
 
 ### "Production safety blocking me"
-→ You're in production! Check `.agent/policy/ENV_DETECTION.md`
+→ You're in production! Check `agent/policy/ENV_DETECTION.md`
 
 ---
 
 ## Next Steps
 
-1. ✅ **Copy `.agent/` folder** to your project
+1. ✅ **Copy `agent/` folder** to your project
 2. ✅ **Fill 2 required fields** in `01_PROJECT_CONTEXT.md`
-3. ✅ **Start using** - just tell AI to "Read .agent/00_INDEX.md and..."
+3. ✅ **Start using** - just tell AI to "Read agent/00_INDEX.md and..."
 
 **That's it! You're ready to go.**
 
@@ -232,14 +232,14 @@ Once set up, use these commands with your AI:
 
 ## Learn More
 
-- **Full Documentation:** `.agent/README.md`
-- **Quick Reference:** `.agent/QUICK_REFERENCE.md`
-- **All Workflows:** `.agent/workflows/README.md`
-- **Examples:** `.agent/examples/`
+- **Full Documentation:** `agent/README.md`
+- **Quick Reference:** `agent/QUICK_REFERENCE.md`
+- **All Workflows:** `agent/workflows/README.md`
+- **Examples:** `agent/examples/`
 
 ---
 
-**Questions?** Check `.agent/README.md` or ask your AI agent:
+**Questions?** Check `agent/README.md` or ask your AI agent:
 ```
-"Read .agent/00_INDEX.md and explain how to [do something]"
+"Read agent/00_INDEX.md and explain how to [do something]"
 ```

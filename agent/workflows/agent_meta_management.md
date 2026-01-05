@@ -1,8 +1,8 @@
 # Workflow: Agent Meta-Management
 
-**Purpose:** Add, update, or refine the `.agent` directory itself
+**Purpose:** Add, update, or refine the `agent` directory itself
 **When to use:** When adding new skills, refining workflows, updating policies, or improving the agent's "brain"
-**Prerequisites:** Deep understanding of the existing `.agent` hierarchy
+**Prerequisites:** Deep understanding of the existing `agent` hierarchy
 
 ---
 
@@ -41,7 +41,7 @@ Ensure the new feature does not contain hardcoded project assumptions.
 ### Validation
 - [ ] Check for hardcoded paths.
 - [ ] Use variables from `01_PROJECT_CONTEXT.md` (e.g., `{{app_name}}`).
-- [ ] Verify links are absolute or correctly relative within `.agent`.
+- [ ] Verify links are absolute or correctly relative within `agent`.
 
 ---
 

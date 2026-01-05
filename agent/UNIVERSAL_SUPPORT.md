@@ -79,7 +79,7 @@ A **universal AI agent configuration system** that works with ANY project type:
 
 ### Step 1: Copy AI Folder
 ```bash
-cp -r .agent/ /path/to/your/project/
+cp -r agent/ /path/to/your/project/
 ```
 
 ### Step 2: Agent Auto-Detects Everything
@@ -129,7 +129,7 @@ User had to:
 
 ### After (Auto-Setup)
 User does:
-1. Copy `.agent/` folder
+1. Copy `agent/` folder
 2. Say: "Setup AI for this project"
 
 Agent:
@@ -298,7 +298,7 @@ Provides safe execution plan
 - ✅ `contracts/UNIVERSAL_PROJECT_SCHEMA.md` - Universal config
 
 ### Total Files
-- **102 markdown files** in .agent/ folder
+- **102 markdown files** in agent/ folder
 - **20 critical files** enhanced
 - **15+ project types** supported
 - **10 quality gates** enforced
@@ -389,7 +389,7 @@ Fills:
 
 ### 1. Copy to Your Project
 ```bash
-cp -r .agent/ /your/project/
+cp -r agent/ /your/project/
 ```
 
 ### 2. Let Agent Auto-Setup

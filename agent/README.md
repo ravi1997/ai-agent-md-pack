@@ -21,11 +21,11 @@
 
 ## 🚀 Quick Start
 
-1. **Copy** this `.agent/` folder to your project root
-2. **Fill** [`01_PROJECT_CONTEXT.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/01_PROJECT_CONTEXT.md) (5 minutes)
-3. **Start** using AI agents via [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/00_INDEX.md)
+1. **Copy** this `agent/` folder to your project root
+2. **Fill** [`01_PROJECT_CONTEXT.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/01_PROJECT_CONTEXT.md) (5 minutes)
+3. **Start** using AI agents via [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/00_INDEX.md)
 
-See [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/QUICKSTART.md) for detailed setup.
+See [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/QUICKSTART.md) for detailed setup.
 
 ---
 
@@ -83,7 +83,7 @@ graph TB
 ## 📁 Directory Structure
 
 ```
-.agent/
+agent/
 ├── 00_INDEX.md              # Main router - START HERE
 ├── 00_SYSTEM.md             # System instructions for AI agents
 ├── 01_PROJECT_CONTEXT.md    # Project-specific configuration
@@ -195,7 +195,7 @@ Minimizes user input by inferring project structure:
 - Discovers log locations and ports
 - Falls back to safe production defaults
 
-See [`autofill/PATH_AND_SERVICE_INFERENCE.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/autofill/PATH_AND_SERVICE_INFERENCE.md)
+See [`autofill/PATH_AND_SERVICE_INFERENCE.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/autofill/PATH_AND_SERVICE_INFERENCE.md)
 
 ### 2. PHI/PII Safety
 Built-in privacy protection for healthcare and sensitive data:
@@ -204,7 +204,7 @@ Built-in privacy protection for healthcare and sensitive data:
 - Safe request logging patterns
 - HIPAA/GDPR-aware defaults
 
-See [`policy/PHI_SAFE_LOGGING.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/policy/PHI_SAFE_LOGGING.md)
+See [`policy/PHI_SAFE_LOGGING.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/policy/PHI_SAFE_LOGGING.md)
 
 ### 3. Production Safety
 Read-only mode for production environments:
@@ -213,7 +213,7 @@ Read-only mode for production environments:
 - Requires explicit confirmation for risky operations
 - Rollback plans for all changes
 
-See [`policy/PRODUCTION_POLICY.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/policy/PRODUCTION_POLICY.md)
+See [`policy/PRODUCTION_POLICY.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/policy/PRODUCTION_POLICY.md)
 
 ### 4. Quality Gates
 Automated quality checks before completion:
@@ -222,7 +222,7 @@ Automated quality checks before completion:
 - Security baseline checks
 - Code review preparation
 
-See [`gates/QUALITY_GATES.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/gates/QUALITY_GATES.md)
+See [`gates/QUALITY_GATES.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/gates/QUALITY_GATES.md)
 
 ---
 
@@ -236,62 +236,62 @@ Choose the right profile for your environment:
 | **production_safe** | Production environments | ❌ No | ❌ Read-only |
 | **aggressive_autofix** | Dev with high confidence | ✅✅ Aggressive | ✅ Yes |
 
-See [`profiles/`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/profiles/) directory
+See [`profiles/`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/profiles/) directory
 
 ---
 
 ## 📚 Common Workflows
 
 ### Debugging
-- [`workflows/debug_basic.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/debug_basic.md) - General Python/Flask bugs
-- [`workflows/nginx_502_504.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/nginx_502_504.md) - Reverse proxy errors
-- [`workflows/systemd_failures.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/systemd_failures.md) - Service failures
+- [`workflows/debug_basic.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/debug_basic.md) - General Python/Flask bugs
+- [`workflows/nginx_502_504.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/nginx_502_504.md) - Reverse proxy errors
+- [`workflows/systemd_failures.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/systemd_failures.md) - Service failures
 
 ### Development
-- [`workflows/feature_delivery.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/feature_delivery.md) - Feature implementation
-- [`workflows/docker_dev_loop.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/docker_dev_loop.md) - Docker development setup
+- [`workflows/feature_delivery.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/feature_delivery.md) - Feature implementation
+- [`workflows/docker_dev_loop.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/docker_dev_loop.md) - Docker development setup
 
 ### Operations
-- [`workflows/deploy_and_migrate.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/deploy_and_migrate.md) - Deployment process
-- [`workflows/maintenance_mode.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/maintenance_mode.md) - Maintenance windows
-- [`workflows/rollback_recovery.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/rollback_recovery.md) - Rollback procedures
+- [`workflows/deploy_and_migrate.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/deploy_and_migrate.md) - Deployment process
+- [`workflows/maintenance_mode.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/maintenance_mode.md) - Maintenance windows
+- [`workflows/rollback_recovery.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/rollback_recovery.md) - Rollback procedures
 
 ### Security
-- [`workflows/security_incident.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/security_incident.md) - Security response
-- [`workflows/security_sqli_path.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/security_sqli_path.md) - SQLi/path traversal
+- [`workflows/security_incident.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/security_incident.md) - Security response
+- [`workflows/security_sqli_path.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/security_sqli_path.md) - SQLi/path traversal
 
 ### Performance
-- [`workflows/performance_profiling.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/performance_profiling.md) - Performance analysis
-- [`workflows/performance.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/workflows/performance.md) - Optimization
+- [`workflows/performance_profiling.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/performance_profiling.md) - Performance analysis
+- [`workflows/performance.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/workflows/performance.md) - Optimization
 
 ---
 
 ## 🛠️ Customization
 
 ### For Your Project
-1. Fill [`01_PROJECT_CONTEXT.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/01_PROJECT_CONTEXT.md) with your project details
-2. Adjust [`02_CONVENTIONS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/02_CONVENTIONS.md) for your coding standards
-3. Modify [`03_DEFAULTS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/03_DEFAULTS.md) for your stack preferences
+1. Fill [`01_PROJECT_CONTEXT.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/01_PROJECT_CONTEXT.md) with your project details
+2. Adjust [`02_CONVENTIONS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/02_CONVENTIONS.md) for your coding standards
+3. Modify [`03_DEFAULTS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/03_DEFAULTS.md) for your stack preferences
 
 ### Adding Custom Workflows
 1. Create new file in `workflows/`
 2. Follow existing template structure
-3. Add reference to [`REFERENCE_MAP.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/REFERENCE_MAP.md)
-4. Update routing in [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/00_INDEX.md) when adding new request types
+3. Add reference to [`REFERENCE_MAP.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/REFERENCE_MAP.md)
+4. Update routing in [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/00_INDEX.md) when adding new request types
 
 ---
 
 ## 🔍 Navigation
 
 ### By Tag
-Use [`REFERENCE_MAP.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/REFERENCE_MAP.md) for tag-based lookup:
+Use [`REFERENCE_MAP.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/REFERENCE_MAP.md) for tag-based lookup:
 - `FLOW:INCIDENT_TRIAGE` → incident handling
 - `WORKFLOW:NGINX_502_504` → nginx debugging
 - `POLICY:PHI_SAFE` → privacy protection
 - `ARTIFACT:PR_SUMMARY` → PR template
 
 ### By Keyword
-Use [`ROUTING_RULES.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/ROUTING_RULES.md) for keyword-based routing:
+Use [`ROUTING_RULES.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/ROUTING_RULES.md) for keyword-based routing:
 - "502", "504" → nginx workflows
 - "docker build" → docker checklists
 - "slow", "timeout" → performance workflows
@@ -300,10 +300,10 @@ Use [`ROUTING_RULES.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent
 
 ## 📖 Documentation
 
-- **Setup:** [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/QUICKSTART.md), [`COPY_INTO_NEW_REPO.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/COPY_INTO_NEW_REPO.md)
-- **Commands:** [`10_COMMANDS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/10_COMMANDS.md) - Quick command reference
-- **Taxonomy:** [`TAXONOMY.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/TAXONOMY.md) - Error classification
-- **Version:** [`VERSION.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/VERSION.md) - Changelog
+- **Setup:** [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/QUICKSTART.md), [`COPY_INTO_NEW_REPO.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/COPY_INTO_NEW_REPO.md)
+- **Commands:** [`10_COMMANDS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/10_COMMANDS.md) - Quick command reference
+- **Taxonomy:** [`TAXONOMY.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/TAXONOMY.md) - Error classification
+- **Version:** [`VERSION.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/VERSION.md) - Changelog
 
 ---
 
@@ -337,7 +337,7 @@ Use [`ROUTING_RULES.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent
 - Basic policy framework
 - Artifact templates
 
-See [`VERSION.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/VERSION.md) for details
+See [`VERSION.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/VERSION.md) for details
 
 ---
 
@@ -372,10 +372,10 @@ This configuration pack is designed to be copied and customized for your project
 - Consider using `profiles/default.md` for non-production
 
 ### Need more help?
-- Review [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/QUICKSTART.md)
+- Review [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/QUICKSTART.md)
 - Check relevant workflow in `workflows/`
 - Consult skill documentation in `skills/`
 
 ---
 
-**Ready to start?** → [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/QUICKSTART.md)
+**Ready to start?** → [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/agent/QUICKSTART.md)

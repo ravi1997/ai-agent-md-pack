@@ -14,7 +14,7 @@ Version 4 introduces the **autofill system** to minimize user input and improve 
 - Structured `AUTO_CONTEXT` YAML block in `01_PROJECT_CONTEXT.md`
 
 ### 2. Improved Documentation
-- New `README.md` in .agent/ folder
+- New `README.md` in agent/ folder
 - New `ARCHITECTURE.md` with system diagrams
 - New `examples/` directory with real-world examples
 
@@ -35,16 +35,16 @@ Version 4 introduces the **autofill system** to minimize user input and improve 
 ### ⚠️ Profile File Names
 **Old (v3):**
 ```
-.agent/profiles/DEFAULT.md
-.agent/profiles/PROD_SAFE.md
-.agent/profiles/AUTOFIX_AGGRESSIVE.md
+agent/profiles/DEFAULT.md
+agent/profiles/PROD_SAFE.md
+agent/profiles/AUTOFIX_AGGRESSIVE.md
 ```
 
 **New (v4):**
 ```
-.agent/profiles/default.md
-.agent/profiles/production_safe.md
-.agent/profiles/aggressive_autofix.md
+agent/profiles/default.md
+agent/profiles/production_safe.md
+agent/profiles/aggressive_autofix.md
 ```
 
 **Action Required:** Update any references to profile files in your documentation or scripts.
@@ -77,8 +77,8 @@ env: "dev"
 
 ### Step 1: Backup Current Configuration
 ```bash
-# Backup your current .agent/ folder
-cp -r .agent/ ai.v3.backup/
+# Backup your current agent/ folder
+cp -r agent/ ai.v3.backup/
 ```
 
 ### Step 2: Update Core Files
@@ -108,7 +108,7 @@ env: "dev"
 #### Update Profile References
 Search for any references to UPPERCASE profile names:
 ```bash
-grep -r "DEFAULT.md\|PROD_SAFE.md\|AUTOFIX_AGGRESSIVE.md" .agent/
+grep -r "DEFAULT.md\|PROD_SAFE.md\|AUTOFIX_AGGRESSIVE.md" agent/
 ```
 
 Replace with lowercase versions:
@@ -121,17 +121,17 @@ Replace with lowercase versions:
 Copy new files from v4:
 ```bash
 # From v4 template
-cp ai-v4-template/.agent/README.md .agent/
-cp ai-v4-template/.agent/ARCHITECTURE.md .agent/
-cp -r ai-v4-template/.agent/examples/ .agent/
-cp -r ai-v4-template/.agent/autofill/ .agent/
+cp ai-v4-template/agent/README.md agent/
+cp ai-v4-template/agent/ARCHITECTURE.md agent/
+cp -r ai-v4-template/agent/examples/ agent/
+cp -r ai-v4-template/agent/autofill/ agent/
 ```
 
 ### Step 4: Remove Duplicate Files
 
 If you have UPPERCASE versions, remove them:
 ```bash
-cd .agent/profiles/
+cd agent/profiles/
 rm -f DEFAULT.md PROD_SAFE.md AUTOFIX_AGGRESSIVE.md
 
 cd ../artifacts/
@@ -144,13 +144,13 @@ Run verification checks:
 
 ```bash
 # Check AUTO_CONTEXT exists
-grep -A 5 "AUTO_CONTEXT" .agent/01_PROJECT_CONTEXT.md
+grep -A 5 "AUTO_CONTEXT" agent/01_PROJECT_CONTEXT.md
 
 # Check no UPPERCASE profiles remain
-ls .agent/profiles/
+ls agent/profiles/
 
 # Check new files exist
-ls .agent/README.md .agent/ARCHITECTURE.md .agent/examples/
+ls agent/README.md agent/ARCHITECTURE.md agent/examples/
 ```
 
 ---
@@ -191,11 +191,11 @@ If you need to rollback to v3:
 
 ```bash
 # Restore backup
-rm -rf .agent/
-mv ai.v3.backup/ .agent/
+rm -rf agent/
+mv ai.v3.backup/ agent/
 
 # Verify
-ls .agent/profiles/DEFAULT.md  # Should exist in v3
+ls agent/profiles/DEFAULT.md  # Should exist in v3
 ```
 
 ---
@@ -219,10 +219,10 @@ ls .agent/profiles/DEFAULT.md  # Should exist in v3
 
 After migration:
 
-1. ✅ Test with a simple request: "Read .agent/00_INDEX.md"
+1. ✅ Test with a simple request: "Read agent/00_INDEX.md"
 2. ✅ Verify autofill works: Leave some fields blank in AUTO_CONTEXT
-3. ✅ Review new examples: Check `.agent/examples/`
-4. ✅ Read architecture docs: `.agent/ARCHITECTURE.md`
+3. ✅ Review new examples: Check `agent/examples/`
+4. ✅ Read architecture docs: `agent/ARCHITECTURE.md`
 5. ✅ Customize for your project: Update conventions, add workflows
 
 ---

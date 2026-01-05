@@ -265,4 +265,4 @@ The AI Agent MD Pack has been successfully transformed into a **comprehensive, u
 
 ---
 
-**Copy the `.agent/` folder to any project and start using it in 30 seconds!**
+**Copy the `agent/` folder to any project and start using it in 30 seconds!**

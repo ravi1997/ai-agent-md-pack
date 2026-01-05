@@ -27,7 +27,7 @@
 - Use parameterized SQL.
 
 ## Documentation artifacts
-Use templates under `.agent/artifacts/`:
+Use templates under `agent/artifacts/`:
 - PR summary
 - Incident report
 - Postmortem
