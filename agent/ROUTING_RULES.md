@@ -181,15 +181,20 @@
 ## ⚪ Priority 7: General Debugging
 
 ### Test Failures
-**Keywords:** `test`, `pytest`, `jest`, `junit`, `failing test`, `test error`
+**Keywords:** `test`, `pytest`, `jest`, `junit`, `ctest`, `flutter test`, `failing test`, `test error`
 
 **Route:**
-1. Use [`skills/pytest_debugging.md`](skills/pytest_debugging.md)
-2. Follow [`workflows/debug_basic.md`](workflows/debug_basic.md)
+1. **Python:** Use [`skills/pytest_debugging.md`](skills/pytest_debugging.md)
+2. **Java/Junit:** Use [`workflows/java_dev_loop.md`](workflows/java_dev_loop.md)
+3. **C++/CTest:** Use [`workflows/cpp_build_test.md`](workflows/cpp_build_test.md)
+4. **Flutter:** Use [`workflows/flutter_dev_loop.md`](workflows/flutter_dev_loop.md)
+5. **General:** Follow [`workflows/debug_basic.md`](workflows/debug_basic.md)
 
 **Examples:**
 - "Tests are failing"
-- "Pytest errors"
+- "JUnit showing errors"
+- "CTest failed to run"
+- "Flutter test failed"
 
 ---
 

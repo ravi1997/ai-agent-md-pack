@@ -24,19 +24,19 @@ Agent MUST verify:
 The `agent` directory is modular. Use these features as needed:
 - `artifacts/`: Templates for outputs (PRs, runbooks).
 - `autofill/`: Logic for inferring project variables.
-- `checklists/`: Evidence collection before proposing fixes.
+- `checklists/`: Evidence collection (including tech-specific: [C++](file:///home/ravi/workspace/ai-agent-md-pack/agent/checklists/CPP_BUILD_EVIDENCE.md), [Java](file:///home/ravi/workspace/ai-agent-md-pack/agent/checklists/JAVA_BUILD_EVIDENCE.md), [Docker](file:///home/ravi/workspace/ai-agent-md-pack/agent/checklists/DOCKER_RUNTIME_EVIDENCE.md)).
 - `contracts/`: Schemas for project and environment configuration.
 - `examples/`: Reference implementations for context and flows.
-- `flows/`: Decision trees for complex triaging/planning.
+- `flows/`: Decision trees (including tech-specific: [C++ Debug](file:///home/ravi/workspace/ai-agent-md-pack/agent/flows/CPP_DEBUGGING_FLOW.md), [Java Triage](file:///home/ravi/workspace/ai-agent-md-pack/agent/flows/JAVA_RUNTIME_TRIAGE.md)).
 - `forms/`: Minimal templates for user input (feature specs, incidents).
 - `frontend/`: (Optional) Feature modules and UI components.
-- `gates/`: Quality assurance and hallucination prevention.
-- `policy/` & `profiles/`: Rules for production safety and agent behavior.
+- `gates/`: Quality assurance (including tech-specific: [C++](file:///home/ravi/workspace/ai-agent-md-pack/agent/gates/CPP_GATE.md), [Java](file:///home/ravi/workspace/ai-agent-md-pack/agent/gates/JAVA_GATE.md), [Docker](file:///home/ravi/workspace/ai-agent-md-pack/agent/gates/DOCKER_GATE.md)).
+- `policy/` & `profiles/`: Rules (including [Docker Policy](file:///home/ravi/workspace/ai-agent-md-pack/agent/policy/DOCKER_POLICY.md)).
 - `security/`: Baseline security rules and hardening skills.
-- `skills/`: Procedural knowledge and setup automation.
+- `skills/`: Procedural knowledge (including [C++](file:///home/ravi/workspace/ai-agent-md-pack/agent/skills/cpp_cmake.md), [Java](file:///home/ravi/workspace/ai-agent-md-pack/agent/skills/java_gradle_maven.md), [Docker Hardening](file:///home/ravi/workspace/ai-agent-md-pack/agent/skills/docker_hardening.md)).
 - `snippets/`: Reusable code patterns and configuration blocks.
 - `testing/`: Test strategy and result logging management.
-- `workflows/`: Standard Operating Procedures (SOPs).
+- `workflows/`: SOPs (including [Docker Opt](file:///home/ravi/workspace/ai-agent-md-pack/agent/workflows/docker_image_optimization.md)).
 
 ## Quick Reference
 
@@ -167,6 +167,20 @@ Go to: `agent/workflows/README.md`
 - Use `model_management.md` for models/configs
 - Use `api_management.md` for routes/decorators
 - Use `test_management.md` for test suite management
+- Use `documentation_management.md` for creating dev/user/test guides
+```
+
+### G) Documentation Request
+**Triggers:** document, guide, walkthrough, manual, technical spec
+
+Go to: `workflows/documentation_management.md`
+- Use templates: `DEVELOPER_GUIDE_TEMPLATE.md`, `USER_GUIDE_TEMPLATE.md`, `TESTER_GUIDE_TEMPLATE.md`
+
+**Example:**
+```
+User: "create a user guide for the login feature"
+→ workflows/documentation_management.md
+→ artifacts/USER_GUIDE_TEMPLATE.md
 ```
 
 ## 4) Outputs (artifacts)

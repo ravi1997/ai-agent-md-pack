@@ -61,6 +61,16 @@ fi
 if [ -f "composer.json" ]; then
     PROJECT_TYPE="php"
 fi
+
+# Check for Flutter project
+if [ -f "pubspec.yaml" ]; then
+    PROJECT_TYPE="flutter"
+fi
+
+# Check for C++ project
+if [ -f "CMakeLists.txt" ] || [ -f "Makefile" ] || [ -f "main.cpp" ]; then
+    PROJECT_TYPE="cpp"
+fi
 ```
 
 **Output:** Set `PROJECT_TYPE` variable
@@ -101,6 +111,18 @@ grep -i "fiber" go.mod && FRAMEWORK="Fiber"
 
 # Ruby
 grep -i "rails" Gemfile && FRAMEWORK="Rails"
+
+# Flutter
+if [ "$PROJECT_TYPE" = "flutter" ]; then
+    FRAMEWORK="Flutter"
+fi
+
+# C++
+if [ -f "CMakeLists.txt" ]; then
+    BUILD_SYSTEM="cmake"
+elif [ -f "Makefile" ]; then
+    BUILD_SYSTEM="make"
+fi
 ```
 
 **Output:** Set `FRAMEWORK` variable
@@ -322,6 +344,16 @@ grep -i "unittest" requirements.txt && TEST_CMD="python -m unittest"
 # Node.js
 grep -i "\"jest\"" package.json && TEST_CMD="npm test"
 grep -i "\"mocha\"" package.json && TEST_CMD="npm test"
+
+# Java
+if [ -f "pom.xml" ]; then TEST_CMD="./mvnw test"; fi
+if [ -f "build.gradle" ]; then TEST_CMD="./gradlew test"; fi
+
+# C++
+if [ "$BUILD_SYSTEM" = "cmake" ]; then TEST_CMD="ctest --test-dir build"; fi
+
+# Flutter
+if [ "$PROJECT_TYPE" = "flutter" ]; then TEST_CMD="flutter test"; fi
 ```
 
 ### 8.2 Detect Linter/Formatter

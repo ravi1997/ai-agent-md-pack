@@ -63,3 +63,9 @@ If your agent supports “profiles”, use:
 - **Default**: `agent/profiles/default.md`
 - **Production-safe**: `agent/profiles/production_safe.md`
 - **Aggressive auto-fix**: `agent/profiles/aggressive_autofix.md`
+
+## Changelog
+
+# Changelog
+
+All notable changes to this project will be documented in this file.

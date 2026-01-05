@@ -40,11 +40,11 @@ See [`QUICKSTART.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md
 - ✅ **Quality Gates** - Automated testing, linting, code review
 
 ### Technology Stack Support
-- **Backend:** Flask, FastAPI, Gunicorn, Uvicorn
-- **Frontend:** React, Vite, Tailwind CSS
-- **Infrastructure:** Docker Compose, systemd, Nginx
+- **Backend:** Flask, FastAPI, Gunicorn, Uvicorn, **Spring Boot (Java), C++ (CMake)**
+- **Frontend:** React, Vite, Tailwind CSS, Flutter
+- **Infrastructure:** **Docker (Hardening & Optimization)**, Docker Compose, systemd, Nginx
 - **Databases:** PostgreSQL, MySQL, SQLite, MongoDB
-- **Tools:** Alembic, pytest, ruff, black
+- **Tools:** Alembic, pytest, ruff, black, **Maven, Gradle, Valgrind, GDB, Clang-Tidy**
 
 ---
 

@@ -38,6 +38,9 @@
 | `WORKFLOW:PERFORMANCE` | [`workflows/performance.md`](workflows/performance.md) | Performance tuning |
 | `WORKFLOW:SECURITY_SQLI` | [`workflows/security_sqli_path.md`](workflows/security_sqli_path.md) | SQL injection |
 | `WORKFLOW:META_MGMT` | [`workflows/agent_meta_management.md`](workflows/agent_meta_management.md) | Update agent rules |
+| `WORKFLOW:CPP_LOOP` | [`workflows/cpp_build_test.md`](workflows/cpp_build_test.md) | C++ Build & Test |
+| `WORKFLOW:JAVA_LOOP` | [`workflows/java_dev_loop.md`](workflows/java_dev_loop.md) | Java development |
+| `WORKFLOW:FLUTTER_LOOP` | [`workflows/flutter_dev_loop.md`](workflows/flutter_dev_loop.md) | Flutter development |
 
 ---
 
@@ -82,6 +85,9 @@
 | `ARTIFACT:PR_SUMMARY` | [`artifacts/pr_summary.md`](artifacts/pr_summary.md) | Pull requests |
 | `ARTIFACT:DECISION_RECORD` | [`artifacts/DECISION_RECORD.md`](artifacts/DECISION_RECORD.md) | Technical decisions |
 | `ARTIFACT:RUNBOOK` | [`artifacts/runbook.md`](artifacts/runbook.md) | Operational procedures |
+| `ARTIFACT:BUILD_LOG` | [`artifacts/BUILD_LOG.md`](artifacts/BUILD_LOG.md) | Build results |
+| `ARTIFACT:FLUTTER_ANALYSIS` | [`artifacts/FLUTTER_ANALYSIS.md`](artifacts/FLUTTER_ANALYSIS.md) | Flutter lint results |
+| `ARTIFACT:DOCS_MANIFEST` | [`artifacts/DOCS_MANIFEST.md`](artifacts/DOCS_MANIFEST.md) | Documentation tracking |
 
 ---
 
@@ -105,6 +111,10 @@
 | `SKILL:DOCKER_COMPOSE` | [`skills/docker_compose_debug.md`](skills/docker_compose_debug.md) | Docker debugging |
 | `SKILL:ALEMBIC_MIGRATIONS` | [`skills/alembic_migrations.md`](skills/alembic_migrations.md) | Database migrations |
 | `SKILL:PYTEST_DEBUGGING` | [`skills/pytest_debugging.md`](skills/pytest_debugging.md) | Test debugging |
+| `SKILL:CPP_CMAKE` | [`skills/cpp_cmake.md`](skills/cpp_cmake.md) | C++ development |
+| `SKILL:JAVA_DEV` | [`skills/java_gradle_maven.md`](skills/java_gradle_maven.md) | Java development |
+| `SKILL:FLUTTER` | [`skills/flutter.md`](skills/flutter.md) | Flutter development |
+| `SKILL:DOCKER` | [`skills/docker.md`](skills/docker.md) | Docker best practices |
 
 ---
 
@@ -138,6 +148,10 @@
 | `PROFILE:DEFAULT` | [`profiles/default.md`](profiles/default.md) | Balanced approach |
 | `PROFILE:PRODUCTION_SAFE` | [`profiles/production_safe.md`](profiles/production_safe.md) | Production only |
 | `PROFILE:AGGRESSIVE_AUTOFIX` | [`profiles/aggressive_autofix.md`](profiles/aggressive_autofix.md) | Dev/staging only |
+| `PROFILE:CPP_DEV` | [`profiles/cpp_developer.md`](profiles/cpp_developer.md) | C++ focus |
+| `PROFILE:JAVA_DEV` | [`profiles/java_developer.md`](profiles/java_developer.md) | Java focus |
+| `PROFILE:FLUTTER_DEV` | [`profiles/flutter_developer.md`](profiles/flutter_developer.md) | Flutter focus |
+| `PROFILE:DOCKER_EXPERT` | [`profiles/docker_expert.md`](profiles/docker_expert.md) | Docker focus |
 
 ---
 

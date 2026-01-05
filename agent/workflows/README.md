@@ -50,6 +50,7 @@
 
 - [`rollback_recovery.md`](rollback_recovery.md) - Rollback deployments
 - [`maintenance_mode.md`](maintenance_mode.md) - Scheduled maintenance
+- [`documentation_management.md`](documentation_management.md) - Manage dev/user/test documentation
 
 ---
 

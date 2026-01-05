@@ -63,15 +63,16 @@ A **universal AI agent configuration system** that works with ANY project type:
 | **Python (FastAPI)** | requirements.txt, FastAPI import | pip/uv | pip/uv | ✅ Full |
 | **Node.js (Express)** | package.json, express dep | npm | npm/yarn/pnpm | ✅ Full |
 | **React** | package.json, react dep | npm/vite | npm/yarn/pnpm | ✅ Full |
-| **Java (Spring)** | pom.xml/build.gradle | maven/gradle | maven/gradle | ✅ Full |
-| **C++ (CMake)** | CMakeLists.txt | cmake | none | ✅ Full |
+| **Java (Spring)** | pom.xml/build.gradle | maven/gradle | maven/gradle | ✅ Enhanced |
+| **C++ (CMake)** | CMakeLists.txt | cmake | none | ✅ Enhanced |
 | **C++ (Makefile)** | Makefile | make | none | ✅ Full |
 | **Go** | go.mod | go | go modules | ✅ Full |
 | **Rust** | Cargo.toml | cargo | cargo | ✅ Full |
-| **Flutter** | pubspec.yaml | flutter | pub | ✅ Full |
+| **Flutter** | pubspec.yaml | flutter | pub | ✅ Enhanced |
 | **HTML/CSS/JS** | index.html | none | none | ✅ Full |
 | **Android** | build.gradle (Android) | gradle | gradle | ✅ Full |
 | **iOS** | *.xcodeproj | xcodebuild | cocoapods | ✅ Full |
+| **Docker** | Dockerfile/compose.yml| docker | docker | ✅ Enhanced |
 
 ---
 
