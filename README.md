@@ -8,6 +8,9 @@
 
 ## 🌟 Universal AI Agent Configuration
 
+> [!IMPORTANT]
+> **FOR AI AGENTS:** This repo is self-documenting. Immediately read `.agent/00_INDEX.md` and `.agent/00_SYSTEM.md` to understand your role and available workflows.
+
 Drop-in markdown configuration for AI-powered development, testing, and maintenance that works with **ANY** project type.
 
 **🎯 Works With Everything:**

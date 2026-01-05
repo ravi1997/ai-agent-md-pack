@@ -15,11 +15,28 @@ You are an agent working with this repo. Follow this router strictly.
 
 Agent MUST verify:
 - [ ] I have read `01_PROJECT_CONTEXT.md` (not assumed values)
-- [ ] I have detected the environment correctly
-- [ ] I understand the user's request clearly
 - [ ] I will state which route I'm taking before proceeding
 
 **If any checkbox is unchecked, STOP and complete it first.**
+
+## 🔍 Feature Discovery (Folder Manifest)
+
+The `.agent` directory is modular. Use these features as needed:
+- `artifacts/`: Templates for outputs (PRs, runbooks).
+- `autofill/`: Logic for inferring project variables.
+- `checklists/`: Evidence collection before proposing fixes.
+- `contracts/`: Schemas for project and environment configuration.
+- `examples/`: Reference implementations for context and flows.
+- `flows/`: Decision trees for complex triaging/planning.
+- `forms/`: Minimal templates for user input (feature specs, incidents).
+- `frontend/`: (Optional) Feature modules and UI components.
+- `gates/`: Quality assurance and hallucination prevention.
+- `policy/` & `profiles/`: Rules for production safety and agent behavior.
+- `security/`: Baseline security rules and hardening skills.
+- `skills/`: Procedural knowledge and setup automation.
+- `snippets/`: Reusable code patterns and configuration blocks.
+- `testing/`: Test strategy and result logging management.
+- `workflows/`: Standard Operating Procedures (SOPs).
 
 ## Quick Reference
 
@@ -141,6 +158,15 @@ User: "endpoint /api/users is slow"
 → checklists/PERF_REGRESSION_EVIDENCE.md
 → workflows/performance_profiling.md
 → artifacts/INCIDENT_REPORT.md
+
+### F) Component Management
+**Triggers:** add flow, update model, delete API, manage tests
+
+Go to: `.agent/workflows/README.md`
+- Use `application_flow.md` for functionality checks
+- Use `model_management.md` for models/configs
+- Use `api_management.md` for routes/decorators
+- Use `test_management.md` for test suite management
 ```
 
 ## 4) Outputs (artifacts)

@@ -37,6 +37,7 @@
 | `WORKFLOW:DEBUG_BASIC` | [`workflows/debug_basic.md`](workflows/debug_basic.md) | Basic debugging |
 | `WORKFLOW:PERFORMANCE` | [`workflows/performance.md`](workflows/performance.md) | Performance tuning |
 | `WORKFLOW:SECURITY_SQLI` | [`workflows/security_sqli_path.md`](workflows/security_sqli_path.md) | SQL injection |
+| `WORKFLOW:META_MGMT` | [`workflows/agent_meta_management.md`](workflows/agent_meta_management.md) | Update .agent rules |
 
 ---
 

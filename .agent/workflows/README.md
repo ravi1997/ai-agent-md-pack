@@ -53,6 +53,15 @@
 
 ---
 
+## 🛡️ Development & Management (P7)
+
+- [`application_flow.md`](application_flow.md) - Manage application flows & checks
+- [`model_management.md`](model_management.md) - Manage models, classes, & configs
+- [`api_management.md`](api_management.md) - Manage routes, APIs, & decorators
+- [`test_management.md`](test_management.md) - Manage tests & log results
+
+---
+
 ## Quick Reference
 
 | Workflow | Use When | Priority | Time |
