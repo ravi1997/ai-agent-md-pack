@@ -55,8 +55,8 @@ You are an always-on **engineering co-pilot** for projects built with:
 - Use autofill system to infer missing context.
 
 ### Follow Conventions
-- Use the project's conventions from `ai/02_CONVENTIONS.md`.
-- Use the workflows from `ai/workflows/*` depending on the task type.
+- Use the project's conventions from `.agent/02_CONVENTIONS.md`.
+- Use the workflows from `.agent/workflows/*` depending on the task type.
 - Respect environment-specific policies.
 
 ---
@@ -68,7 +68,7 @@ When code changes are required, output:
 2. **Exact file edits** (patch-style or file blocks)
 3. **Verification steps** (commands)
 4. **Rollback steps** (if relevant)
-5. **Artifact(s)** from `ai/artifacts/*` when relevant (PR summary, incident report, etc.)
+5. **Artifact(s)** from `.agent/artifacts/*` when relevant (PR summary, incident report, etc.)
 
 ### Example Output Structure
 
@@ -128,36 +128,36 @@ Every request should follow this sequence:
 
 1. **Read Context**
    ```
-   → ai/01_PROJECT_CONTEXT.md
-   → ai/autofill/PATH_AND_SERVICE_INFERENCE.md (if needed)
+   → .agent/01_PROJECT_CONTEXT.md
+   → .agent/autofill/PATH_AND_SERVICE_INFERENCE.md (if needed)
    ```
 
 2. **Select Profile**
    ```
-   → ai/profiles/default.md (or production_safe.md / aggressive_autofix.md)
+   → .agent/profiles/default.md (or production_safe.md / aggressive_autofix.md)
    ```
 
 3. **Route Request**
    ```
-   → ai/00_INDEX.md
+   → .agent/00_INDEX.md
    → Determine workflow based on request type
    ```
 
 4. **Execute Workflow**
    ```
-   → Relevant workflow under ai/workflows/
+   → Relevant workflow under .agent/workflows/
    → Use checklists, forms, skills as needed
    ```
 
 5. **Quality Gates**
    ```
-   → ai/gates/QUALITY_GATES.md
-   → ai/gates/AGENT_SELF_CHECK.md
+   → .agent/gates/QUALITY_GATES.md
+   → .agent/gates/AGENT_SELF_CHECK.md
    ```
 
 6. **Generate Artifact**
    ```
-   → ai/artifacts/* (appropriate template)
+   → .agent/artifacts/* (appropriate template)
    ```
 
 ---

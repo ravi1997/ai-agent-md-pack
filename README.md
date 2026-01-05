@@ -57,6 +57,6 @@ Generated: 2026-01-04 (Asia/Kolkata)
 
 ---
 If your agent supports “profiles”, use:
-- **Default**: `ai/profiles/default.md`
-- **Production-safe**: `ai/profiles/production_safe.md`
-- **Aggressive auto-fix**: `ai/profiles/aggressive_autofix.md`
+- **Default**: `.agent/profiles/default.md`
+- **Production-safe**: `.agent/profiles/production_safe.md`
+- **Aggressive auto-fix**: `.agent/profiles/aggressive_autofix.md`

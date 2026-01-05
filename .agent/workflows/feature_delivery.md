@@ -28,7 +28,7 @@ Fill out the feature form to clarify requirements.
 ### Commands
 ```bash
 # Copy the feature form template
-cp ai/forms/FEATURE_MIN.md features/my-feature-spec.md
+cp .agent/forms/FEATURE_MIN.md features/my-feature-spec.md
 
 # Fill it out with:
 # - User story
@@ -65,7 +65,7 @@ Plan the implementation before coding.
 ### For Non-Trivial Features
 Create a decision record:
 ```bash
-cp ai/artifacts/DECISION_RECORD.md docs/decisions/my-feature.md
+cp .agent/artifacts/DECISION_RECORD.md docs/decisions/my-feature.md
 # Document:
 # - Problem statement
 # - Considered alternatives
@@ -280,7 +280,7 @@ Generate PR summary and create the pull request.
 
 ### Generate PR Summary
 ```bash
-cp ai/artifacts/pr_summary.md .github/pr-my-feature.md
+cp .agent/artifacts/pr_summary.md .github/pr-my-feature.md
 # Fill in:
 # - What changed
 # - Why it changed

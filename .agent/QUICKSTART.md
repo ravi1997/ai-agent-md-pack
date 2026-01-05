@@ -4,7 +4,7 @@
 
 ```mermaid
 graph TD
-    A[Start] --> B[Copy ai/ folder to repo root]
+    A[Start] --> B[Copy .agent/ folder to repo root]
     B --> C[Open 01_PROJECT_CONTEXT.md]
     C --> D{Know all details?}
     D -->|Yes| E[Fill AUTO_CONTEXT block]
@@ -21,18 +21,18 @@ graph TD
     style K fill:#FF9800,color:#fff
 ```
 
-### 1) **Copy** the `ai/` folder into your repo root
+### 1) **Copy** the `.agent/` folder into your repo root
 
 ```bash
 # From this template repo
-cp -r ai/ /path/to/your/project/
+cp -r .agent/ /path/to/your/project/
 
 # Or clone and copy
 git clone <this-repo-url>
 cp -r ai-agent-md-pack/ai /path/to/your/project/
 ```
 
-### 2) **Fill once**: `ai/01_PROJECT_CONTEXT.md`
+### 2) **Fill once**: `.agent/01_PROJECT_CONTEXT.md`
 
 Open the file and fill the `AUTO_CONTEXT` YAML block. **Fill only what you know** - leave the rest blank.
 
@@ -50,9 +50,9 @@ domain: "localhost"
 # Leave rest blank - agent will detect
 ```
 
-### 3) **Start** with the entrypoint: `ai/00_INDEX.md`
+### 3) **Start** with the entrypoint: `.agent/00_INDEX.md`
 
-Tell your AI agent to read `ai/00_INDEX.md` and give it a task using short commands from `ai/10_COMMANDS.md`.
+Tell your AI agent to read `.agent/00_INDEX.md` and give it a task using short commands from `.agent/10_COMMANDS.md`.
 
 ---
 
@@ -101,9 +101,9 @@ Agent will:
 ## What Happens Next?
 
 The agent should **not ask for deep prompts**—only minimal forms when needed:
-- `ai/forms/INCIDENT_MIN.md` - For incidents (8 fields)
-- `ai/forms/FEATURE_MIN.md` - For features (5 fields)
-- `ai/forms/DEPLOY_MIN.md` - For deployments (6 fields)
+- `.agent/forms/INCIDENT_MIN.md` - For incidents (8 fields)
+- `.agent/forms/FEATURE_MIN.md` - For features (5 fields)
+- `.agent/forms/DEPLOY_MIN.md` - For deployments (6 fields)
 
 ---
 
@@ -162,10 +162,10 @@ Agent infers:
 
 ## Next Steps
 
-- **Read:** [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/00_INDEX.md) - Main router
-- **Commands:** [`10_COMMANDS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/10_COMMANDS.md) - Quick command reference
-- **Customize:** [`02_CONVENTIONS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/02_CONVENTIONS.md) - Your coding standards
-- **Full docs:** [`README.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/ai/README.md) - Complete documentation
+- **Read:** [`00_INDEX.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/00_INDEX.md) - Main router
+- **Commands:** [`10_COMMANDS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/10_COMMANDS.md) - Quick command reference
+- **Customize:** [`02_CONVENTIONS.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/02_CONVENTIONS.md) - Your coding standards
+- **Full docs:** [`README.md`](file:///home/programmer/Desktop/projects/aiims/ai-agent-md-pack/.agent/README.md) - Complete documentation
 
 ---
 

@@ -134,7 +134,7 @@ The AI Agent MD Pack is now:
 ### For Users
 ```bash
 # 1. Copy to your project
-cp -r ai/ /your/project/
+cp -r .agent/ /your/project/
 
 # 2. Let agent auto-setup
 "Setup AI folder for this project"
@@ -169,7 +169,7 @@ cp -r ai/ /your/project/
 
 ### Core Files
 - [`README.md`](../README.md) - Main project overview
-- [`ai/README.md`](README.md) - AI folder documentation
+- [`.agent/README.md`](README.md) - AI folder documentation
 - [`QUICKSTART.md`](QUICKSTART.md) - 30-second guide
 - [`ARCHITECTURE.md`](ARCHITECTURE.md) - System architecture
 - [`UNIVERSAL_SUPPORT.md`](UNIVERSAL_SUPPORT.md) - Language support

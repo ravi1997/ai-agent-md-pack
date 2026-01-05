@@ -6,4 +6,4 @@
 3. Add/adjust tests
 4. Run format/lint
 5. Commit with clear message
-6. Create PR with template `ai/artifacts/pr_summary.md`
+6. Create PR with template `.agent/artifacts/pr_summary.md`

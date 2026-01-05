@@ -30,4 +30,4 @@ Use these phrases (copy/paste). Provide only what you know; agent will infer the
 - `turn this into tasks: <goal>`
 - `generate PR description for <changes>`
 
-Outputs must follow `ai/00_SYSTEM.md`.
+Outputs must follow `.agent/00_SYSTEM.md`.

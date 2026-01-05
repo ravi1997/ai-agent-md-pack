@@ -13,5 +13,5 @@ Rules:
   - alerting and incident documentation
 
 Always produce:
-- an incident report draft (`ai/artifacts/incident_report.md`)
-- a runbook update suggestion (`ai/artifacts/runbook_template.md`)
+- an incident report draft (`.agent/artifacts/incident_report.md`)
+- a runbook update suggestion (`.agent/artifacts/runbook_template.md`)

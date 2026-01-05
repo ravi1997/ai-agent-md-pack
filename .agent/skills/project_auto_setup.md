@@ -2,10 +2,10 @@
 
 **Purpose:** Automatically analyze any project and fill in the AI folder configuration without user input
 
-**When to use:** When copying the `ai/` folder into a new project for the first time
+**When to use:** When copying the `.agent/` folder into a new project for the first time
 
 **Prerequisites:** 
-- `ai/` folder has been copied to project root
+- `.agent/` folder has been copied to project root
 - Agent has read access to project files
 
 **Outputs:** Fully configured `01_PROJECT_CONTEXT.md` with all inferred values
@@ -384,7 +384,7 @@ lint_cmd: "$LINT_CMD"
 
 ### 9.2 Write to 01_PROJECT_CONTEXT.md
 
-Replace the AUTO_CONTEXT block in `ai/01_PROJECT_CONTEXT.md` with the generated values.
+Replace the AUTO_CONTEXT block in `.agent/01_PROJECT_CONTEXT.md` with the generated values.
 
 ---
 
@@ -448,9 +448,9 @@ confidence_percent = (confidence / max_score) * 100
 [... list uncertain fields ...]
 
 **Next Steps:**
-1. Review `ai/01_PROJECT_CONTEXT.md`
+1. Review `.agent/01_PROJECT_CONTEXT.md`
 2. Fill any missing fields manually
-3. Run: `ai/00_INDEX.md` to start using AI agent
+3. Run: `.agent/00_INDEX.md` to start using AI agent
 ```
 
 ---
@@ -505,7 +505,7 @@ Analyzing project...
 ✅ Detected PostgreSQL database
 ✅ Found pytest and ruff
 
-Auto-filling ai/01_PROJECT_CONTEXT.md...
+Auto-filling .agent/01_PROJECT_CONTEXT.md...
 
 **Confidence: HIGH (95%)**
 
@@ -517,7 +517,7 @@ Configuration complete! Here's what I found:
 - Entry point: wsgi:app
 - Port: 8000
 
-Review ai/01_PROJECT_CONTEXT.md to verify.
+Review .agent/01_PROJECT_CONTEXT.md to verify.
 Ready to use! Try: "fix this error: [paste error]"
 ```
 
@@ -535,9 +535,9 @@ I could only detect:
 - Some dependencies
 
 Please manually fill:
-1. Open `ai/01_PROJECT_CONTEXT.md`
+1. Open `.agent/01_PROJECT_CONTEXT.md`
 2. Fill the AUTO_CONTEXT block
-3. See `ai/examples/example_project_context.md` for reference
+3. See `.agent/examples/example_project_context.md` for reference
 
 Or provide more info:
 - What framework are you using?

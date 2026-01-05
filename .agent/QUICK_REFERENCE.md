@@ -8,13 +8,13 @@
 
 ```bash
 # 1. Copy folder
-cp -r ai/ /path/to/your/project/
+cp -r .agent/ /path/to/your/project/
 
 # 2. Fill context (minimum: app_name + env)
-vim ai/01_PROJECT_CONTEXT.md
+vim .agent/01_PROJECT_CONTEXT.md
 
 # 3. Start using
-# Tell agent: "Read ai/00_INDEX.md"
+# Tell agent: "Read .agent/00_INDEX.md"
 ```
 
 ---
@@ -180,19 +180,19 @@ Before marking complete:
 
 ```bash
 # View agent routing
-cat ai/00_INDEX.md
+cat .agent/00_INDEX.md
 
 # Check your config
-cat ai/01_PROJECT_CONTEXT.md
+cat .agent/01_PROJECT_CONTEXT.md
 
 # See all workflows
-ls ai/workflows/
+ls .agent/workflows/
 
 # Find a workflow
-grep -r "nginx" ai/workflows/
+grep -r "nginx" .agent/workflows/
 
 # Check autofill rules
-cat ai/autofill/PATH_AND_SERVICE_INFERENCE.md
+cat .agent/autofill/PATH_AND_SERVICE_INFERENCE.md
 ```
 
 ---
