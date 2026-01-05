@@ -94,3 +94,9 @@ If your agent supports “profiles”, use:
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## Changelog
+
+# Changelog
+
+All notable changes to this project will be documented in this file.

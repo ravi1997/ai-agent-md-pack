@@ -4,59 +4,83 @@
 echo "🤖 Setting up Antigravity integration..."
 echo ""
 
-# Check if agent/ directory exists
-if [ ! -d "ai" ]; then
-    echo "❌ Error: agent/ directory not found"
-    echo "   Please run this script from your project root with agent/ folder"
+# Check if agent/ directory exists (checking for 'agent' or legacy 'ai')
+SOURCE_DIR=""
+if [ -d "agent" ]; then
+    SOURCE_DIR="agent"
+    echo "Found agent/ directory (Standard) ✓"
+elif [ -d "ai" ]; then
+    SOURCE_DIR="ai"
+    echo "Found ai/ directory (Legacy) ✓"
+else
+    echo "❌ Error: agent/ or ai/ directory not found"
+    echo "   Please run this script from your project root with the AI pack folder"
     exit 1
 fi
 
-echo "Found agent/ directory ✓"
 echo ""
 
 # Ask user preference
 echo "Choose integration method:"
-echo "1) Rename agent/ to agent/ (Recommended - Antigravity standard)"
-echo "2) Keep agent/ and create agent/ symlink"
-echo "3) Keep agent/ and create agent/ pointer files"
+if [ "$SOURCE_DIR" == "agent" ]; then
+    echo "1) Integration already standard (agent/ detected). Verify only."
+else
+    echo "1) Rename $SOURCE_DIR/ to agent/ (Recommended - Antigravity standard)"
+fi
+echo "2) Keep $SOURCE_DIR/ and create agent/ symlink"
+echo "3) Keep $SOURCE_DIR/ and create agent/ pointer files"
 echo ""
 read -p "Enter choice (1-3): " choice
 
 case $choice in
     1)
         echo ""
-        echo "Renaming agent/ to agent/..."
-        mv ai agent
-        echo "✓ Done! Antigravity will auto-detect agent/ directory"
+        if [ "$SOURCE_DIR" == "agent" ]; then
+             echo "Already using standard 'agent' directory name. Nothing to rename."
+        else
+            echo "Renaming $SOURCE_DIR/ to agent/..."
+            mv "$SOURCE_DIR" agent
+            echo "✓ Done! Antigravity will auto-detect agent/ directory"
+        fi
         ;;
     2)
         echo ""
-        echo "Creating agent/ symlink to agent/..."
-        ln -s ai agent
-        echo "✓ Done! Antigravity will follow symlink to agent/"
+        if [ "$SOURCE_DIR" == "agent" ]; then
+            echo "Source is already 'agent'. No need to symlink to itself."
+        else
+            echo "Creating agent/ symlink to $SOURCE_DIR/..."
+            ln -s "$SOURCE_DIR" agent
+            echo "✓ Done! Antigravity will follow symlink to agent/"
+        fi
         ;;
     3)
         echo ""
         echo "Creating agent/ pointer directory..."
+        # If source is agent, we can't create agent dir. Assume this option is mainly for legacy naming.
+        if [ "$SOURCE_DIR" == "agent" ]; then
+             echo "Source is already 'agent'. This option is redundant."
+             exit 0
+        fi
+        
         mkdir -p agent
         
         # Create pointer README
-        cat > agent/README.md << 'EOF'
+        cat > agent/README.md << EOF
 # Agent Configuration
 
-This project uses AI Agent MD Pack located in `agent/` directory.
+This project uses AI Agent MD Pack located in \`$SOURCE_DIR/\` directory.
 
-**Start here:** [agent/00_INDEX.md](../agent/00_INDEX.md)
+**Start here:** [$SOURCE_DIR/00_INDEX.md](../$SOURCE_DIR/00_INDEX.md)
 
-All agent instructions, workflows, and policies are in the `agent/` folder.
+All agent instructions, workflows, and policies are in the \`$SOURCE_DIR/\` folder.
 EOF
         
         # Create symlinks to key files
-        ln -s ../agent/00_SYSTEM.md agent/00_SYSTEM.md
-        ln -s ../agent/00_INDEX.md agent/00_INDEX.md
-        ln -s ../agent/01_PROJECT_CONTEXT.md agent/01_PROJECT_CONTEXT.md
+        ln -s ../$SOURCE_DIR/00_SYSTEM.md agent/00_SYSTEM.md
+        ln -s ../$SOURCE_DIR/00_INDEX.md agent/00_INDEX.md
+        ln -s ../$SOURCE_DIR/01_PROJECT_CONTEXT.md agent/01_PROJECT_CONTEXT.md
         
-        echo "✓ Done! Created agent/ with pointers to agent/"
+        echo "✓ Done! Created agent/ with pointers to $SOURCE_DIR/"
         ;;
     *)
         echo "Invalid choice. Exiting."
