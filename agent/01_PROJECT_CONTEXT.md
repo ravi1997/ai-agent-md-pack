@@ -34,6 +34,7 @@ Copy/paste and edit. **Leave unknowns blank** - agent will infer.
 # CORE (Required)
 app_name: ""              # REQUIRED
 project_type: ""          # python|nodejs|java|cpp|go|rust|flutter|static
+PRIMARY_STACK: ""         # OPTIONAL: Manual override for stack detection (e.g. "python", "java")
 env: "dev"                # REQUIRED - dev|staging|production
 
 # STRUCTURE
