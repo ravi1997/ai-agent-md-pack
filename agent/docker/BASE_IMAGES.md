@@ -12,6 +12,8 @@ This registry defines the approved base images for each technology stack to ensu
   - *Use for:* Deployment, final Docker images. Small size, secure.
 - **Development (`dev`)**: `python:3.11-bookworm`
   - *Use for:* Dev containers, CI pipelines. Includes build tools (gcc, make).
+- **Modern (`uv`)**: `ghcr.io/astral-sh/uv:python3.11-bookworm-slim`
+  - *Use for:* Fast builds using `uv` package manager.
 
 ### Node.js / Web
 
