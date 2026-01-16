@@ -33,6 +33,7 @@
 | `WORKFLOW:MAINTENANCE_MODE` | [`workflows/maintenance_mode.md`](workflows/maintenance_mode.md) | Maintenance windows |
 | `WORKFLOW:ROLLBACK_RECOVERY` | [`workflows/rollback_recovery.md`](workflows/rollback_recovery.md) | Rollback procedures |
 | `WORKFLOW:DOCKER_DEV_LOOP` | [`workflows/docker_dev_loop.md`](workflows/docker_dev_loop.md) | Docker development |
+| `WORKFLOW:DOCKER_SETUP` | [`workflows/docker_setup.md`](workflows/docker_setup.md) | Initial Docker setup |
 | `WORKFLOW:SYSTEMD_FAILURES` | [`workflows/systemd_failures.md`](workflows/systemd_failures.md) | systemd issues |
 | `WORKFLOW:DB_MIGRATIONS` | [`workflows/db_migrations.md`](workflows/db_migrations.md) | Database migrations |
 | `WORKFLOW:DEBUG_BASIC` | [`workflows/debug_basic.md`](workflows/debug_basic.md) | Basic debugging |
@@ -183,6 +184,7 @@
 ## Usage Examples
 
 ### Finding a File by Category
+
 ```
 Need incident workflow? → WORKFLOW:NGINX_502_504
 Need quality gates? → GATE:QUALITY
@@ -190,6 +192,7 @@ Need production rules? → POLICY:PRODUCTION
 ```
 
 ### Finding a File by Keyword
+
 ```
 "502 error" → CHECK:NGINX_502 → WORKFLOW:NGINX_502_504
 "migration failed" → CHECK:MIGRATION_FAIL → WORKFLOW:DB_MIGRATIONS
@@ -203,4 +206,3 @@ Need production rules? → POLICY:PRODUCTION
 - [`ROUTING_RULES.md`](ROUTING_RULES.md) - Keyword-based routing
 - [`TAXONOMY.md`](TAXONOMY.md) - Error categorization
 - [`00_INDEX.md`](00_INDEX.md) - Main router
-

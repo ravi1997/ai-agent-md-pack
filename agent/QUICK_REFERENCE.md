@@ -75,6 +75,7 @@ User Request
 ## 🔐 Safety Checklist
 
 Before any action:
+
 - ✅ Environment detected correctly?
 - ✅ PHI/PII will be redacted?
 - ✅ Production = read-only?
@@ -96,23 +97,26 @@ Before any action:
 ## 📊 Autofill System
 
 **You provide:**
+
 ```yaml
 app_name: "myapp"
 env: "dev"
 ```
 
 **Agent infers:**
+
 - `backend_dir` from repo structure
 - `entrypoint` from app.py/wsgi.py
 - `app_port` from docker-compose.yml
 - `compose_backend_service` from services
-- `python_package` from __init__.py
+- `python_package` from **init**.py
 
 ---
 
 ## 🛠️ Quality Gates
 
 Before marking complete:
+
 1. ✅ Tests pass (`pytest`)
 2. ✅ Lints pass (`ruff check`)
 3. ✅ Format applied (`ruff format`)
@@ -204,9 +208,11 @@ cat agent/autofill/PATH_AND_SERVICE_INFERENCE.md
 ---
 
 ## ⚡ Command Phrase Book (from 10_COMMANDS)
+
 (You speak short; agent does deep)
 
 ### Debug / Fix
+
 - `fix this error: <paste traceback/log>`
 - `reproduce and fix: <symptom>`
 - `write a regression test for: <bug>`
@@ -214,22 +220,27 @@ cat agent/autofill/PATH_AND_SERVICE_INFERENCE.md
 - `gunicorn keeps restarting <logs>`
 
 ### DevOps
+
 - `make docker dev loop stable`
+- `setup docker for this repo`
 - `optimize compose for dev`
 - `systemd service failing <unit name/logs>`
 - `add maintenance mode for app`
 
 ### Security
+
 - `harden inputs for route <route>`
 - `review logs for sqli/path traversal patterns`
 - `add safe request logging middleware`
 
 ### Performance
+
 - `profile slow endpoint <path>`
 - `reduce memory usage`
 - `add caching safely`
 
 ### Feature work
+
 - `implement feature: <one sentence>`
 - `turn this into tasks: <goal>`
 - `generate PR description for <changes>`
