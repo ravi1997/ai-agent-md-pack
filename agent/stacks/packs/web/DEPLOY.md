@@ -22,6 +22,8 @@ See `agent/snippets/Dockerfile.node.md`.
 
 ### Nginx Strategy (SPA)
 
+**Ref**: `agent/snippets/web/Dockerfile.nginx.md`
+
 ```dockerfile
 COPY --from=builder /app/dist /usr/share/nginx/html
 ```

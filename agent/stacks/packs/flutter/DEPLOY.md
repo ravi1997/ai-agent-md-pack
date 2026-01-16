@@ -32,6 +32,10 @@ flutter build web --release
 - **Hosting**: Serve as static files (Nginx, Firebase Hosting, S3).
 - **Caveat**: Ensure `index.html` `<base href>` is correct.
 
+## Docker Deployment (Web)
+
+See `agent/snippets/flutter/Dockerfile.web.md` for a multi-stage Nginx build.
+
 ## Desktop Support
 
 - **Linux**: `flutter build linux`
