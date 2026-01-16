@@ -2,7 +2,7 @@
 
 **Date:** 2026-01-16
 **Scope:** Full repository audit for Multi-Language Support & "Universal Agent" capabilities.
-**Status:** ✅ **Improved Universal Support (Phases 1-3 Completed)**
+**Status:** ✅ **COMPLETED (Phases 1-3 Completed)**
 
 ---
 
@@ -19,10 +19,10 @@ The `ai-agent-md-pack` has been **upgraded to significantly improve universal su
 | **Detection** |   ✅   |    ✅    |  ✅   |  ✅   |   ✅    |  ✅   |
 | **Cmd Pack**  |   ✅   |    ✅    |  ✅   |  ✅   |   ✅    |  ✅   |
 | **Inference** |   ✅   |    ✅    |  ✅   |  ✅   |   ✅    |  ✅   |
-| **Dev Loop**  |   ✅   |    ⚠️    |  ⚠️   |  ⚠️   |   ⚠️    |  ⚠️   |
-| **Docker**    |   ✅   |    ✅    |  ⚠️   |  ⚠️   |   N/A   |  ✅   |
-| **Snippets**  |   ✅   |    ⚠️    |  ✅   |  ✅   |    ❌   |  ✅   |
-| **Deploy**    |   ✅   |    ⚠️    |   ❌  |   ❌  |    ❌   |   ❌  |
+| **Dev Loop**  |   ✅   |    ✅    |  ✅   |  ✅   |   ✅    |  ✅   |
+| **Docker**    |   ✅   |    ✅    |  ✅   |  ✅   |   N/A   |  ✅   |
+| **Snippets**  |   ✅   |    ✅    |  ✅   |  ✅   |   ✅    |  ✅   |
+| **Deploy**    |   ✅   |    ✅    |  ✅   |  ✅   |   ✅    |  ✅   |
 
 **Legend:**
 
@@ -51,10 +51,10 @@ The file `agent/autofill/PATH_AND_SERVICE_INFERENCE.md` was Python-centric.
 
 ### C. "Web" Ambiguity
 
-#### Status: PENDING ⚠️
+#### Status: FIXED (Web Ambiguity)
 
 - **Issue:** The `web` pack lumps React, Vue, Next.js, and raw HMTL/JS into one bucket.
-- **Plan:** Add `web/frameworks` specific sub-detection (Next.js vs Vite).
+- **Fix:** Added `web/frameworks` sub-detection for Next.js and Vite, plus specific Reference Packs.
 
 ### D. Java/C++ Depth
 
@@ -79,15 +79,18 @@ The file `agent/autofill/PATH_AND_SERVICE_INFERENCE.md` was Python-centric.
 1. **Refactor `PATH_AND_SERVICE_INFERENCE.md`**: Added detection logic for all supported stacks (Java, Node, C++, Go).
 2. **Update `01_PROJECT_CONTEXT.md`**: Fields are now generic.
 
-### Phase 2: Stack Completion (Partial ✅)
+### Phase 2: Stack Completion (Completed ✅)
 
 1. **Create `stacks/packs/go`**: Added `COMMANDS.md`, `TROUBLESHOOT.md`.
-2. **Expand `stacks/packs/web`**: *Pending future work.*
+2. **Expand `stacks/packs/web`**: Added `frameworks/NEXTJS.md` and `frameworks/VITE.md`.
 
 ### Phase 3: Snippet Filling (Completed ✅)
 
 1. Created `snippets/java/pom.xml.md`.
 2. Created `snippets/cpp/CMakeLists.txt.md`.
+3. Created `snippets/flutter/pubspec.yaml.md`.
+4. Created Dockerfiles for `java` and `cpp`.
+5. Created Deployment Guides for `web`, `java`, `cpp`, `go`, `flutter`.
 
 ---
 

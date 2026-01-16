@@ -21,3 +21,17 @@
 - **Build**: `npm run build`, `yarn build`, `pnpm build`
 - **Run/Dev**: `npm run dev`, `npm start`
 - **Test**: `jest`, `vitest`, `mocha`, `cypress`, `playwright`
+
+## Framework Sub-Detection
+
+If `web` is detected, refine the stack by checking for specifics:
+
+### Next.js
+
+- **Check**: `next.config.*` OR dependency `next`.
+- **Ref**: `agent/stacks/packs/web/frameworks/NEXTJS.md`
+
+### Vite
+
+- **Check**: `vite.config.*` OR dependency `vite`.
+- **Ref**: `agent/stacks/packs/web/frameworks/VITE.md`
